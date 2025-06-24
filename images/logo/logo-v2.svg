@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="8956.86 1601.073 850.459 583.02604" width="850.459" height="583.02604">
+  <defs>
+    <filter id="Shadow" filterUnits="userSpaceOnUse" x="8871.814" y="1542.7703">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="-5.3333333"/>
+      <feOffset in="blur" result="offset" dx="0" dy="2"/>
+      <feFlood flood-color="black" flood-opacity=".75" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="FilledArrow_Marker" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -2 5 4" markerWidth="5" markerHeight="4" color="black">
+      <g>
+        <path d="M 2.311111 0 L 0 -.8666667 L 0 .8666667 Z" fill="currentColor" stroke="currentColor" stroke-width="1"/>
+      </g>
+    </marker>
+    <filter id="Shadow_2" filterUnits="userSpaceOnUse" x="8871.814" y="1542.7703">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="-5.3333333"/>
+      <feOffset in="blur" result="offset" dx="0" dy="5"/>
+      <feFlood flood-color="black" flood-opacity=".75" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <radialGradient cx="0" cy="0" r="1" id="Gradient" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d5fed6"/>
+      <stop offset=".684375" stop-color="#90d37a"/>
+      <stop offset="1" stop-color="#3ca600"/>
+    </radialGradient>
+    <radialGradient id="Obj_Gradient" xl:href="#Gradient" gradientTransform="translate(9314.675 1883.6028) scale(21.213203)"/>
+    <radialGradient cx="0" cy="0" r="1" id="Gradient_2" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d6d7ff"/>
+      <stop offset=".684375" stop-color="#7997ff"/>
+      <stop offset="1" stop-color="#0052ff"/>
+    </radialGradient>
+    <radialGradient id="Obj_Gradient_2" xl:href="#Gradient_2" gradientTransform="translate(9527.555 1895.7917) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_3" xl:href="#Gradient" gradientTransform="translate(9154 1680.781) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_4" xl:href="#Gradient" gradientTransform="translate(9154 1822.896) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_5" xl:href="#Gradient_2" gradientTransform="translate(9429.436 1698.4256) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_6" xl:href="#Gradient_2" gradientTransform="translate(9610.178 1636.8569) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_7" xl:href="#Gradient_2" gradientTransform="translate(9610.178 1773.7835) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_8" xl:href="#Gradient_2" gradientTransform="translate(9509.169 1773.7835) scale(21.213203)"/>
+    <radialGradient id="Obj_Gradient_9" xl:href="#Gradient" gradientTransform="translate(9314.675 1627.2082) scale(21.213203)"/>
+  </defs>
+  <g id="Canvas_1" fill="none" stroke-opacity="1" fill-opacity="1" stroke="none" stroke-dasharray="none">
+    <title>Canvas 1</title>
+    <g id="Canvas_1_Logo">
+      <title>Logo</title>
+      <g id="Line_527" filter="url(#Shadow)">
+        <path d="M 9160.025 1838.261 C 9167.284 1852.8154 9182.193 1873.984 9210.409 1884.6444 C 9228.024 1891.3 9247.621 1892.6483 9265.027 1891.8004" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+      </g>
+      <g id="Line_526" filter="url(#Shadow_2)">
+        <path d="M 9426.256 1714.618 C 9421.444 1743.124 9414.9 1803.1585 9435.447 1844.4889 C 9446.229 1866.1772 9462.505 1878.7591 9478.39 1886.036" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+      </g>
+      <g id="Line_525" filter="url(#Shadow_2)">
+        <path d="M 9544.045 1896.3875 C 9562.146 1895.8143 9590.652 1891.063 9605.861 1868.6028 C 9614.617 1855.6739 9617.426 1839.151 9617.513 1823.5316" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+      </g>
+      <g id="Graphic_523">
+        <text transform="translate(8956.86 1929.099)" fill="black">
+          <tspan font-family="Gill Sans" font-size="140" fill="black" x="0" y="129" xml:space="preserve">Casa Góes Lab</tspan>
+        </text>
+      </g>
+      <g id="Graphic_518">
+        <path d="M 9325.282 1872.9962 C 9331.14 1878.854 9331.14 1888.3515 9325.282 1894.2094 C 9319.424 1900.0673 9309.927 1900.0673 9304.069 1894.2094 C 9298.211 1888.3515 9298.211 1878.854 9304.069 1872.9962 C 9309.927 1867.1383 9319.424 1867.1383 9325.282 1872.9962" fill="url(#Obj_Gradient)"/>
+        <path d="M 9325.282 1872.9962 C 9331.14 1878.854 9331.14 1888.3515 9325.282 1894.2094 C 9319.424 1900.0673 9309.927 1900.0673 9304.069 1894.2094 C 9298.211 1888.3515 9298.211 1878.854 9304.069 1872.9962 C 9309.927 1867.1383 9319.424 1867.1383 9325.282 1872.9962" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Graphic_515">
+        <circle cx="9527.555" cy="1895.7917" r="15.0000239685289" fill="url(#Obj_Gradient_2)"/>
+        <circle cx="9527.555" cy="1895.7917" r="15.0000239685289" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+      </g>
+      <g id="Group_529">
+        <g id="Line_528" filter="url(#Shadow_2)">
+          <path d="M 9595.298 1629.7169 C 9575.26 1621.3172 9538.067 1609.935 9503.069 1621.8569 C 9482.977 1628.7009 9467.316 1641.9622 9455.702 1655.5513" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+        </g>
+        <g id="Line_524" filter="url(#Shadow_2)">
+          <path d="M 9594.48 1768.691 C 9587.037 1766.9857 9577.104 1765.5096 9565.016 1765.5096 C 9562.94 1765.5096 9560.871 1765.5531 9558.819 1765.634" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+        </g>
+        <g id="Line_522" filter="url(#Shadow)">
+          <path d="M 9147.141 1695.7927 C 9143.19 1706.7395 9139 1723.365 9139 1744.6444 C 9139 1754.8159 9139.957 1764.8423 9141.388 1774.1479" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+        </g>
+        <g id="Line_521" filter="url(#Shadow)">
+          <path d="M 9298.559 1623.6606 C 9280.091 1620.469 9248.553 1617.6411 9218.98 1627.5015 C 9206.688 1631.5998 9196.297 1637.3697 9187.676 1643.6096" marker-end="url(#FilledArrow_Marker)" stroke="black" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+        </g>
+        <g id="Graphic_520">
+          <circle cx="9154" cy="1680.781" r="15.0000239685288" fill="url(#Obj_Gradient_3)"/>
+          <circle cx="9154" cy="1680.781" r="15.0000239685288" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Graphic_519">
+          <circle cx="9154" cy="1822.896" r="15.0000239685288" fill="url(#Obj_Gradient_4)"/>
+          <circle cx="9154" cy="1822.896" r="15.0000239685288" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Graphic_517">
+          <circle cx="9429.436" cy="1698.4256" r="15.0000239685291" fill="url(#Obj_Gradient_5)"/>
+          <circle cx="9429.436" cy="1698.4256" r="15.0000239685291" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Graphic_516">
+          <path d="M 9620.785 1626.2503 C 9626.643 1632.1081 9626.643 1641.6056 9620.785 1647.4634 C 9614.927 1653.3213 9605.43 1653.3213 9599.572 1647.4634 C 9593.714 1641.6056 9593.714 1632.1081 9599.572 1626.2503 C 9605.43 1620.3924 9614.927 1620.3924 9620.785 1626.2503" fill="url(#Obj_Gradient_6)"/>
+          <path d="M 9620.785 1626.2503 C 9626.643 1632.1081 9626.643 1641.6056 9620.785 1647.4634 C 9614.927 1653.3213 9605.43 1653.3213 9599.572 1647.4634 C 9593.714 1641.6056 9593.714 1632.1081 9599.572 1626.2503 C 9605.43 1620.3924 9614.927 1620.3924 9620.785 1626.2503" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Graphic_514">
+          <path d="M 9620.785 1763.177 C 9626.643 1769.0348 9626.643 1778.5322 9620.785 1784.39 C 9614.927 1790.248 9605.43 1790.248 9599.572 1784.39 C 9593.714 1778.5322 9593.714 1769.0348 9599.572 1763.177 C 9605.43 1757.319 9614.927 1757.319 9620.785 1763.177" fill="url(#Obj_Gradient_7)"/>
+          <path d="M 9620.785 1763.177 C 9626.643 1769.0348 9626.643 1778.5322 9620.785 1784.39 C 9614.927 1790.248 9605.43 1790.248 9599.572 1784.39 C 9593.714 1778.5322 9593.714 1769.0348 9599.572 1763.177 C 9605.43 1757.319 9614.927 1757.319 9620.785 1763.177" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Graphic_513">
+          <path d="M 9519.776 1763.177 C 9525.634 1769.0348 9525.634 1778.5322 9519.776 1784.39 C 9513.918 1790.248 9504.42 1790.248 9498.562 1784.39 C 9492.705 1778.5322 9492.705 1769.0348 9498.562 1763.177 C 9504.42 1757.319 9513.918 1757.319 9519.776 1763.177" fill="url(#Obj_Gradient_8)"/>
+          <path d="M 9519.776 1763.177 C 9525.634 1769.0348 9525.634 1778.5322 9519.776 1784.39 C 9513.918 1790.248 9504.42 1790.248 9498.562 1784.39 C 9492.705 1778.5322 9492.705 1769.0348 9498.562 1763.177 C 9504.42 1757.319 9513.918 1757.319 9519.776 1763.177" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+        <g id="Line_512">
+          <line x1="9414.436" y1="1606.073" x2="9337.293" y2="1910.7917" stroke="black" stroke-linecap="round" stroke-linejoin="round" stroke-width="10"/>
+        </g>
+        <g id="Graphic_511">
+          <path d="M 9325.282 1616.6017 C 9331.14 1622.4595 9331.14 1631.957 9325.282 1637.8148 C 9319.424 1643.6727 9309.927 1643.6727 9304.069 1637.8148 C 9298.211 1631.957 9298.211 1622.4595 9304.069 1616.6017 C 9309.927 1610.7438 9319.424 1610.7438 9325.282 1616.6017" fill="url(#Obj_Gradient_9)"/>
+          <path d="M 9325.282 1616.6017 C 9331.14 1622.4595 9331.14 1631.957 9325.282 1637.8148 C 9319.424 1643.6727 9309.927 1643.6727 9304.069 1637.8148 C 9298.211 1631.957 9298.211 1622.4595 9304.069 1616.6017 C 9309.927 1610.7438 9319.424 1610.7438 9325.282 1616.6017" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

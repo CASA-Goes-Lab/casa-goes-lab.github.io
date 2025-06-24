@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Security of Critical Systems",
+    "description": "",
+    // "image": {
+    //   "url": "images/features/noun_branding_1885335.svg",
+    //   "width": 80,
+    //   "height": 80
+    // }
+  },
+  {
+    "title": "Robustness of Discrete Systems",
+    "description": "",
+    // "image": {
+    //   "url": "images/features/noun_The Process_1885341.svg",
+    //   "width": 80,
+    //   "height": 80
+    // }
+  },
+  {
+    "title": "Learning from Demonstrations with Uncertainty",
+    "description": "",
+    // "image": {
+    //   "url": "images/features/noun_3d modeling_1885342.svg",
+    //   "width": 80,
+    //   "height": 80
+    // }
+  }
+]

@@ -1,72 +1,52 @@
-# Set theme
-remote_theme: daviddarnes/alembic@main
-
-# File excludes
-exclude:
-- README.md
-- Gemfile
-- Gemfile.lock
-
-# Set plugins
-plugins:
-- jekyll-sitemap
-- jekyll-mentions
-- jekyll-paginate
-- jekyll-seo-tag
-- jekyll-redirect-from
-- jekyll-feed
-- jekyll-commonmark
-- jekyll-include-cache
-- jemoji
-- jekyll-remote-theme
-
-# Site settings
-url: 'https://casa-goes-lab.github.io/'
-baseurl: ''
-title: 'Casa Góes Lab'
-description: 'Controlling Autonomous Systems with Assurances'
+baseurl: '/'
 permalink: pretty
-logo: 
+title: 'Casa Góes Lab'
 
-# Pagination
-paginate: 1
-paginate_path: blog/page:num
+logo:
+  mobile: "images/logo/logo-v2.svg"
+  mobile_height: "40px"
+  mobile_width: "40px"
+  desktop: "images/logo/logo-v2.svg"
+  desktop_height: "60px"
+  desktop_width: "120px"
 
-# Header nav
-navigation_header:
-- title: Home
-  url: /
-- title: About
-  url: /about/
-- title: People
-  url: /people/
+home: 
+  limit_services: 3
 
-# Footer nav
-navigation_footer:
-- title: Back to top
-  url: "#top"
-
-# Collections
 collections:
-  posts:
-    title: Posts
+  research:
     output: true
-    description: "My thoughts and ideas"
-    feature_text: |
-      Welcome to my blog
-    feature_image: ""
+  #   sort_by: weight
+  team:
+    output: true
+    parmalink: /team/:path/
 
-# Collection settings
 defaults:
-  -
-    scope:
+  # - scope:
+  #     path: ""
+  #     type: "services"
+  #   values:
+  #     layout: "service"
+  - scope:
       path: ""
-      type: "posts"
+      type: "Team"
     values:
-      layout: post # Set the default layout for posts
-  -
-    scope:
-      path: ""
-      type: "pages"
-    values:
-      layout: page # Set the default layout for pages
+      layout: "team"
+
+sass:
+  style: compressed # possible values: nested expanded compact compressed
+
+plugins:
+  - jekyll-environment-variables
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - LICENSE.md
+  - LICENSE
+  - README.md

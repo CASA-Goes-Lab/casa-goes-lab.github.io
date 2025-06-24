@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Github",
+    "link": "https://github.com/CASA-Goes-Lab",
+    "image": "images/social/github.svg"
+  },
+  {
+      "name": "Email",
+      "link": "mailto:romulo@psu.edu ",
+      "image": "images/social/email.svg"
+  }
+]

@@ -1,0 +1,35 @@
+main:
+  - name: "Home"
+    url: "/"
+    weight: 1
+    #Overview of research project
+  - name: "Research"
+    url: "/research/"
+    weight: 2
+    #Overview of research project
+  - name: "Team"
+    url: "/team/"
+    weight: 3
+    # List of current members and alumni
+  - name: "Publications"
+    url: "/publications/"
+    weight: 4
+    # List of publications with blog posts about them
+  # - name: "Gallery"
+  #   url: "/gallery/"
+  #   weight: 5
+    # Some recent activities photos
+  # - name: "Contact"
+  #   url: "/contact/"
+  #   weight: 6
+    # Prospective students
+
+
+# Remove footer
+footer:
+  - name: "Home"
+    url: "/"
+    weight: 1
+  - name: "Contact"
+    url: "/contact/"
+    weight: 2
