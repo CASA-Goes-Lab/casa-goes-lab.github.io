@@ -1,7 +1,7 @@
 ---
-title: "Josh Terza"
+title: "Chenghui Zhu"
 date: 2025-06-19
-image: "images/team/undergrad/josh-terza.jpg"
+image: "images/team/undergrad/chenghui-zhu.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Enginerring

@@ -1,7 +1,7 @@
 ---
 title: "Souvik Kar"
 date: 2025-06-19
-image: "images/team/souvik-kar.jpg"
+image: "images/team/undergrad/souvik-kar.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: "Computer Science"

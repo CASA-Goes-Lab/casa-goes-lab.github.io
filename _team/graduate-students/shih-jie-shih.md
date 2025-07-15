@@ -1,7 +1,7 @@
 ---
 title: "Shih-Jie Shih"
 date: 2025-06-19
-image: "images/team/shih-jie.jpg"
+image: "images/team/grad/shih-jie.jpg"
 jobtitle: "Ph.D. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 email: ""

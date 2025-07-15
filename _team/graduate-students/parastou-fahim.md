@@ -1,7 +1,7 @@
 ---
 title: "Parastou Fahim"
 date: 2025-06-19
-image: "images/team/parastou.jpg"
+image: "images/team/grad/parastou.jpg"
 jobtitle: "Ph.D. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 email: ""
