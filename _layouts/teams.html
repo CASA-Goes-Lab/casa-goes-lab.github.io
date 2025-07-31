@@ -56,9 +56,13 @@ bodyClass: "page-teams"
                 <h2 class="team-name"> {{ team.title }}</h2>
                 <hr>
                 <div class="col-md-2 col-sm-10">
-                    {% if team.image %}
+                    {% if team.image and team.placeholder!=true%}
                     <div class="team-image">
                         <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
+                    </div>
+                    {% else %}
+                    <div class="team-image">
+                        <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.placeholder_loc | relative_url }}" />
                     </div>
                     {% endif %}
                 </div>
