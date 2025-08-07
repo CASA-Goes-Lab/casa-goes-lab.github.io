@@ -3,6 +3,107 @@ layout: default
 bodyClass: "page-home"
 ---
 
+<style>
+    .custom-hr {
+      border: none; /* Remove default border */
+      border-top: 3px solid  #96BEE6; /* Add a 2px solid blue line at the top */
+      width: 60%; /* Set width to 50% of its container */
+      margin: 3px auto; /* Center the line and add vertical margin */
+      opacity: 1;
+    }
+    /* body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f9f9f9;
+    } */
+
+    /* .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    } */
+
+    .card {
+      background-color: white;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      flex: 1 1 45%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      min-width: 300px;
+      
+    }
+
+    .card_feature {
+      background-color: white;
+      border: 0px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 10px;
+      flex: 0 0 50%;
+      box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+      /* min-height: 200px; */
+      /* min-width: 300px; */
+    }
+
+    .card h2 {
+      text-align: center;
+      color: #black;
+      margin-bottom: 10px;
+    }
+
+    .underline {
+      width: 140px;
+      height: 3px;
+      background-color: #96BEE6;
+      margin: 0 auto 20px auto;
+      border-radius: 4px;
+    }
+    .underline_mission{
+      width: 325px;
+      height: 3px;
+      background-color: #96BEE6;
+      margin: 0 auto 20px auto;
+      border-radius: 4px;
+    }
+
+    .card p,
+    .card li {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .card ul {
+      padding-left: 20px;
+    }
+
+    .highlight-red {
+      color: #e53935;
+      font-weight: bold;
+    }
+
+    .highlight-green {
+      color: #2e7d32;
+      font-weight: bold;
+    }
+
+    .highlight-blue {
+      color: #1e88e5;
+      font-weight: bold;
+    }
+
+    a {
+      color: #1e88e5;
+      text-decoration: none;
+    }
+
+    /* @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      } */
+    }
+</style>
+
 <div
   class="bg-image"
   style="
@@ -38,19 +139,21 @@ bodyClass: "page-home"
 
 <!-- Mission -->
 <div class="strip">
-  <div class="container pt-6 pb-6 pb-md-10">
-    <h1 class="service-title" style="text-align: center;">
-    Casa Góes Lab Mission
-    </h1>
-    <p style="text-align: center; font-size: larger;">
-    We develop first principle methods to analyze and design complex systems with strong resilience, security and safety guarantees.    
-    </p>
-     <p style="text-align: center; font-size: large;">
-    To achieve these goals, we leverage control and formal methods techniques for modeling, analysis, and design of complex systems.
-    Specifically, our group combines discrete event and hybrid systems, supervisory control, and temporal logics.
-    Our applications domains include critical infrastructure control systems (manufacturing, water, and transportation), robotics, software systems, and human behavioral systems.
-    </p> 
-   
+  <div class="container pt-2 pb-2 pb-md-2">
+    <div class="card">
+      <h1 class="service-title" style="text-align: center;margin-bottom: 4px">
+      Casa Góes Lab Mission
+      </h1>
+      <div class="underline_mission"></div>
+      <p style="text-align: center; font-size: larger;">
+      We develop first principle methods to analyze and design complex systems with strong resilience, security and safety guarantees.    
+      </p>
+      <p style="text-align: center; font-size: large;">
+      To achieve these goals, we leverage control and formal methods techniques for modeling, analysis, and design of complex systems.
+      Specifically, our group combines discrete event and hybrid systems, supervisory control, and temporal logics.
+      Our applications domains include critical infrastructure control systems (manufacturing, water, and transportation), robotics, software systems, and human behavioral systems.
+      </p> 
+   </div>
   </div>
 </div>
 <!-- Recent projects descriptions
@@ -82,6 +185,33 @@ bodyClass: "page-home"
   </div>
 </div> -->
 
+<!-- <hr class="custom-hr"> -->
+<!-- Lab news -->
+<div class="strip">
+  <div class="container pt-2 pb-2 pb-md-2">
+
+    <!-- <div class="col-12 col-md-6 col-lg-12 mb-2" style= "height: 300px;"> -->
+      <div class="card">
+      <h1 class="service-title" style="text-align: center;margin-bottom: 4px">
+      Lab News
+      </h1>
+      <div class="underline"></div>
+      <p>Aug 2025 - Congrats Parastou on passing her comprehensive exam</p>
+      <p>Aug 2025 - Congrats Parastou on being selected to the 2025 ICDS Junior Research Program</p>
+      <p>Jul 2025 - One paper in collaboration accepted at CDC 2025. Work done by visiting student Samuel Oliveira from UDESC and in collaboration with PSU CAIS lab. Hope to see you in Rio</p>
+      <p>May 2025 - Big congrats to 2025 Casa Góes graduates: Greg Westfall (BS), Collin Ross (BS), Shih-Jie (MS) Ratnesh (MS)</p>
+      <p>Apr 2025 - Congrats to Vlad Roiban on being selected for the 2025/2026 EE Undergraduate Research Program</p>
+      </div>
+    <!-- </div> -->
+    <!-- <div class="col-12 col-md-6 col-lg-4 mb-2" style= "height: 300px;">
+      <h1 class="service-title" style="text-align: center;">
+      Lab News
+      </h1>
+    </div> -->
+
+  </div>
+</div>
+
 <!-- <br> -->
 {% if site.data.features %}
 <div class="strip strip-primary-gradient-top-bottom-sec">
@@ -92,14 +222,18 @@ bodyClass: "page-home"
       {% for feature in site.data.features %}
       <div class="col-12 col-md-6 col-lg-4 mb-2" style= "height: 300px;">
         {% if feature.image %}
+        <div class="card">
         <div class="feature">
           <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
           <h2 class="feature-title">{{ feature.title }}</h2>
           <div class="feature-content">{{ feature.description }}</div>
         </div>
+        </div>
         {% else %}
+        <div class="card_feature">
         <div class="feature-no-image">
           <h2 class="feature-title">{{ feature.title }}</h2>
+        </div>
         </div>
         {% endif %}
       </div>
