@@ -1,7 +1,9 @@
 ---
-title: "Kofi Amoa"
+title: "Muhammad Saidi"
 date: 2025-06-19
-image: "images/team/undergrad/kofi-amoa.jpg"
+image: "images/team/undergrad/muhammad-saidi.jpg"
+placeholder: true
+placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Enginerring
