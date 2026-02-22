@@ -4,7 +4,7 @@ date: 2025-06-19
 image: "images/team/undergrad/gal-alon.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: "galalon218@gmail.com"
 linkedinurl: "https://www.linkedin.com/in/gal-alon-873656246/"
 sentence-projectdescription : "Streamlined neural-network system for object detection designed to identify features essential for autonomous navigation."

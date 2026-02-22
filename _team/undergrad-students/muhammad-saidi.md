@@ -6,7 +6,7 @@ placeholder: true
 placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: "aisamuddinsaidi03@gmail.com"
 linkedinurl: "https://www.linkedin.com/in/aisamuddinsaidi/"
 sentence-projectdescription : "Duckiebot integrated with Intel RealSense for camera-based localization and navigation"

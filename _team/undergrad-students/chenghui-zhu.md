@@ -4,7 +4,7 @@ date: 2025-06-19
 image: "images/team/undergrad/chenghui-zhu.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: ""
 linkedinurl: ""
 startdate: 2025

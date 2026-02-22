@@ -4,7 +4,7 @@ date: 2025-06-19
 image: "images/team/undergrad/tristan-germa.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: "tristangerma@gmail.com"
 linkedinurl: "https://www.linkedin.com/in/tristangerma/"
 sentence-projectdescription : "Building a dual-camera indoor positioning system that uses synchronized RealSense D435 depth streams, AprilTag detection, and ROS to estimate robot pose in real time."
