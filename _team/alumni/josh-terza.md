@@ -14,6 +14,6 @@ paragraph-projectdescription : ""
 startdate: 2025
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
 ---
 

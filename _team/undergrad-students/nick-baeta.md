@@ -1,13 +1,15 @@
 ---
-title: "Daniel Miller"
-date: 2025-06-19
-image: "images/team/undergrad/daniel-miller.jpg"
+title: "Nicolas Baeta"
+date: 2026-01-01
+image: "images/team/undergrad/nick-baeta.jpg"
+placeholder: true
+placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
 linkedinurl: ""
-startdate: 2025
+startdate: 2026
 grad-student: false
 ug-student: true
 alumni: false

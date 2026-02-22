@@ -97,6 +97,77 @@ bodyClass: "page-home"
       text-decoration: none;
     }
 
+    .news-item {
+      position: relative;
+      display: inline;
+    }
+
+    .news-item.has-image {
+      cursor: pointer;
+    }
+
+    .news-item.has-image a {
+      border-bottom: 2px dotted #1e88e5;
+    }
+
+    .news-item:hover .news-image {
+      display: block;
+    }
+
+    /* compact news list styling */
+    .news-list {
+      margin: 0;
+      padding: 0;
+    }
+
+    .news-list .news-entry {
+      margin: 0 0 0.25rem 0; /* small gap between entries */
+      line-height: 1.15; /* tighter line height for compactness */
+      font-size: 15px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 5rem 1rem 1fr;
+      column-gap: 0.5rem;
+      align-items: start;
+    }
+
+    .news-date {
+      font-weight: bold;
+    }
+
+    .news-triangle {
+      color: inherit;
+    }
+
+    .news-content {
+      /* content wraps here; triangle remains aligned */
+    }
+
+    .news-entry.has-image:hover .news-image {
+      display: block;
+    }
+
+    .news-image {
+      display: none;
+      position: absolute;
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 5px;
+      z-index: 1000;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      max-width: 300px;
+      top: 100%;
+      left: 0;
+      margin-top: 5px;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+    }
+
     /* @media (max-width: 768px) {
       .container {
         flex-direction: column;
@@ -199,14 +270,21 @@ bodyClass: "page-home"
       Lab News
       </h1>
       <div class="underline"></div>
-      <p>Oct 2025 - Our CDC 2025 accepted paper on Cybersecurity Control Recovery is now available on <a href="https://arxiv.org/pdf/2510.11405">Arxiv</a></p>
-      <p>Oct 2025 - Rômulo will serve as an Associate Editor for the  <a href="https://wodes2026.events.tue.nl/">18th Workshop on Discrete Event Systems (WODES 2026)</a>. Consider submitting your work to WODES</p>
-      <p>Sept 2025 - New <a href="https://www.nsf.gov/awardsearch/simple-search/">NSF project </a> to Strengthen Data Center Resilience - <a href="https://news.engr.psu.edu/2025/meira-goes-romulo-data-cooling-centers.aspx">PSU news</a></p>
-      <p>Aug 2025 - Congrats Parastou on passing her comprehensive exam</p>
-      <p>Aug 2025 - Congrats Parastou on being selected to the 2025 ICDS Junior Research Program</p>
-      <p>Jul 2025 - One paper in collaboration accepted at CDC 2025. Work done by visiting student Samuel Oliveira from UDESC and in collaboration with PSU CAIS lab. Hope to see you in Rio</p>
-      <!-- <p>May 2025 - Big congrats to 2025 Casa Góes graduates: Greg Westfall (BS), Collin Ross (BS), Shih-Jie (MS) Ratnesh (MS)</p> -->
-      <!-- <p>Apr 2025 - Congrats to Vlad Roiban on being selected for the 2025/2026 EE Undergraduate Research Program</p> -->
+      {% if site.news %}
+        {% assign news_items = site.news | sort: "date" | reverse | limit: 6 %}
+        <div class="news-list">
+        {% for news in news_items %}
+        <div class="news-entry{% if news.image %} has-image{% endif %}">
+          <div class="news-date">{{ news.date | date: "%b %Y" }}</div>
+          <div class="news-triangle">▶</div>
+          <div class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+          {% if news.image %}
+          <div class="news-image"><img src="{{ news.image | relative_url }}" alt="{{ news.title }}" /></div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+      {% endif %}
       </div>
   </div>
 </div>

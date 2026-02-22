@@ -1,10 +1,10 @@
 ---
 title: "Kofi Amoa"
 date: 2025-06-19
-image: ""
+image: "images/team/undergrad/kofi-amoa.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: "kma6375@psu.edu"
 linkedinurl: "https://www.linkedin.com/in/kofi-a-psu/"
 sentence-projectdescription : "Implementation of a stop controller and eventually intersection control for CASA Duckie town Simulator."

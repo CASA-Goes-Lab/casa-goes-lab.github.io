@@ -20,6 +20,8 @@ collections:
   team:
     output: true
     parmalink: /team/:path/
+  news:
+    output: false
 
 defaults:
   # - scope:
