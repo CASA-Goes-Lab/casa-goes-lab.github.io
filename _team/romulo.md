@@ -8,5 +8,6 @@ email: "romulo at psu.edu"
 linkedinurl: "a"
 promoted: true
 weight: 1
+professor: true
 ---
 

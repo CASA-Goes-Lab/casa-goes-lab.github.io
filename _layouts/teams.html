@@ -9,72 +9,69 @@ bodyClass: "page-teams"
 <div class="intro-teams">
     <div class="container">
         {{ content }}
-        <div class ="row">
-            {% assign promoted_teams = site.team | where: "promoted", true | sort: "weight" %}
-            {% for team in promoted_teams %}
-                <h2 class="team-name"> {{ team.title }}</h2>
-                <hr>
-                <div class="col-md-2 col-sm-10">
-                    {% if team.image %}
+        <!-- Professor section -->
+        <div class="row justify-content-center">
+            {% assign professor = site.team | where: "professor", true | first %}
+            {% if professor %}
+                <div class="col-md-12">
+                    <h2 class="team-name"> {{ professor.title }}</h2>
+                    <hr>
                     <div class="team-image">
-                        <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
+                        <img width="160" height="160" alt="{{ professor.title }}" class="img-fluid mb-2" src="{{ professor.image | relative_url }}" />
                     </div>
-                    {% endif %}
+                    <p style = "align-items: left;">{{ professor.jobtitle }}</p>
+                    <p style = "align-items: left;">{{ professor.jobdpt}}</p>
+                    <p style = "align-items: left;">{{ professor.email}}</p>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style = "align-items: left;">{{ team.jobtitle }}</p>
-                    <p style = "align-items: left;">{{ team.jobdpt}}</p>
-                    <p style = "align-items: left;">{{ team.email}}</p>
-                </div>
-        {% endfor %}
+            {% endif %}
         </div>
-        <!-- TODO: Add if to add website link -->
-        <div class ="row">
-            {% assign promoted_teams = site.team | where: "grad-student", true | sort: "startdate" %}
-            {% for team in promoted_teams %}
-                <h2 class="team-name"> {{ team.title }}</h2>
-                <hr>
-                <div class="col-md-2 col-sm-10">
-                    {% if team.image %}
+        <!-- Graduate students gallery -->
+        <h2 class="team-name mt-4">Graduate Students</h2>
+        <hr>
+        <div class="row">
+            {% assign grad_students = site.team | where: "grad-student", true | where_exp: "item", "item.alumni != true" | sort: "startdate" %}
+            {% for team in grad_students %}
+                <div class="col-12 col-md-3 col-lg-3 mb-4">
                     <div class="team-image">
-                        <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
+                        {% if team.image and team.placeholder!=true %}
+                        <img width="160" height="160" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" style="min-width:160px;max-width:100%;height:160px;object-fit:cover;" />
+                        {% else %}
+                        <img width="160" height="160" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.placeholder_loc | relative_url }}" style="width:160px;height:160px;object-fit:cover;" />
+                        {% endif %}
                     </div>
-                    {% endif %}
+                    <h3 style="font-size: 1.1em; margin-bottom: 0.2em;">{{ team.title }}</h3>
+                    <p style="font-size: 0.95em; margin-bottom: 0.1em;">{{ team.jobtitle }}</p>
+                    <p style="font-size: 0.9em; margin-bottom: 0.1em;">{{ team.jobdpt }}</p>
+                    {% if team.topic %}<p style="font-size: 0.9em; margin-bottom: 0.1em;">{{ team.topic }}</p>{% endif %}
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style = "align-items: left;">{{ team.jobtitle }}</p>
-                    <p style = "align-items: left;">{{ team.jobdpt}}</p>
-                    {% if team.email %}
-                    <p style = "align-items: left;">{{ team.email}}</p>
-                    {% endif %}
-                    {% if team.topic %}
-                    <p style = "align-items: left;">{{ team.topic}}</p>
-                    {% endif %}
-                </div>
-        {% endfor %}
+            {% endfor %}
         </div>
-        <div class ="row">
-            {% assign promoted_teams = site.team | where: "ug-student", true | sort: "startdate" %}
-            {% for team in promoted_teams %}
-                <h2 class="team-name"> {{ team.title }}</h2>
-                <hr>
-                <div class="col-md-2 col-sm-10">
-                    {% if team.image and team.placeholder!=true%}
+        <!-- Undergraduate students gallery -->
+        <h2 class="team-name mt-4">Undergraduate Students</h2>
+        <hr>
+        <div class="row">
+            {% assign ug_students = site.team | where: "ug-student", true | where_exp: "item", "item.alumni != true" | sort: "startdate" %}
+            {% for team in ug_students %}
+                <div class="col-12 col-md-3 col-lg-3 mb-4">
                     <div class="team-image">
-                        <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" />
+                        {% if team.image and team.placeholder!=true %}
+                        <img width="160" height="160" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.image | relative_url }}" style="min-width:160px;max-width:100%;height:160px;object-fit:cover;" />
+                        {% else %}
+                        <img width="160" height="160" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.placeholder_loc | relative_url }}" style="width:160px;height:160px;object-fit:cover;" />
+                        {% endif %}
                     </div>
-                    {% else %}
-                    <div class="team-image">
-                        <img width="200" height="200" alt="{{ team.title }}" class="img-fluid mb-2" src="{{ team.placeholder_loc | relative_url }}" />
-                    </div>
-                    {% endif %}
+                    <h3 style="font-size: 1.1em; margin-bottom: 0.2em;">{{ team.title }}</h3>
+                    <p style="font-size: 0.95em; margin-bottom: 0.1em;">Major: {{ team.major }}</p>
                 </div>
-                <div class="col-md-10 col-sm-12">
-                    <p style = "align-items: left;">{{ team.jobtitle }}</p>
-                    <p style = "align-items: left;">Major: {{ team.major}}</p>
-                    <!-- <p style = "align-items: left;">{{ team.email}}</p> -->
-                </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+ <hr>
+</div>
+<div class="container mt-5 mb-5">
+    <div class="row">
+        <div class="col-12 text-center">
+            <a href="/alumni/" style="font-size: 1.1em;">See our Alumni</a>
         </div>
     </div>
 </div>
