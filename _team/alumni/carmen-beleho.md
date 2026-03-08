@@ -1,18 +1,19 @@
 ---
-title: "Josh Terza"
-date: 2025-06-19
-image: "images/team/undergrad/josh-terza.jpg"
+title: "Carmen Beleho"
+date: 2024-06-01
+image: "images/team/undergrad/collin-ross.jpg"
 placeholder: true
 placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
-jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+jobdpt: "University of Maryland, Baltimore County"
+major: "Information Systems"
 email: ""
 linkedinurl: ""
 sentence-projectdescription : ""
 paragraph-projectdescription : ""
-startdate: 06/2025
-enddate: 12/2025
+startdate: 06/2024
+enddate: 08/2024
+nextpos:
 grad-student: false
 ug-student: true
 alumni: true

@@ -1,22 +1,22 @@
 ---
-title: "Collin Ross"
-date: 2024-07-01
+title: "Austin Collins"
+date: 2023-06-01
 image: "images/team/undergrad/collin-ross.jpg"
 placeholder: true
 placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
-jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Engineering
+jobdpt: "University of Maryland, Baltimore County"
+major: Mechanical Engineering
 email: ""
 linkedinurl: ""
 sentence-projectdescription : ""
 paragraph-projectdescription : ""
-startdate: 06/2024
-enddate: 05/2025
+startdate: 06/2023
+enddate: 08/2023
 nextpos:
 grad-student: false
 ug-student: true
 alumni: true
-next_position: ""
+next_position: "Ph.D. at University of Michigan"
 ---
 

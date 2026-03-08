@@ -1,20 +1,20 @@
 ---
-title: "Josh Terza"
-date: 2025-06-19
-image: "images/team/undergrad/josh-terza.jpg"
+title: "Md-Nur-Adam Dony"
+date: 2023-09-01
+image: "images/team/undergrad/md-dony.jpg"
 placeholder: true
 placeholder_loc: "images/team/placeholder.png"
-jobtitle: "Undergraduate Student"
+jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-major: Electrical Enginerring
+major: Electrical Engineering
 email: ""
 linkedinurl: ""
 sentence-projectdescription : ""
 paragraph-projectdescription : ""
-startdate: 06/2025
-enddate: 12/2025
-grad-student: false
-ug-student: true
+startdate: 09/2023
+enddate: 05/2025
+grad-student: true
+ug-student: false
 alumni: true
 next_position: ""
 ---
