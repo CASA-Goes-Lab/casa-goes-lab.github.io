@@ -11,8 +11,7 @@ email: ""
 linkedinurl: ""
 sentence-projectdescription : ""
 paragraph-projectdescription : ""
-startdate: 06/2025
-enddate: 12/2025
+startdate: 2025
 grad-student: false
 ug-student: true
 alumni: true

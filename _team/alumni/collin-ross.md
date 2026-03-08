@@ -1,6 +1,6 @@
 ---
-title: "Josh Terza"
-date: 2025-06-19
+title: "Greg Westfall"
+date: 2024-01-01
 image: "images/team/undergrad/josh-terza.jpg"
 placeholder: true
 placeholder_loc: "images/team/placeholder.png"
@@ -11,8 +11,9 @@ email: ""
 linkedinurl: ""
 sentence-projectdescription : ""
 paragraph-projectdescription : ""
-startdate: 06/2025
-enddate: 12/2025
+startdate: 2024
+enddate: 2025
+nextpos:
 grad-student: false
 ug-student: true
 alumni: true
