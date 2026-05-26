@@ -9,7 +9,8 @@ jobdpt: "Electrical Engineering Department"
 major: Electrical Engineering
 email: ""
 linkedinurl: ""
-startdate: 2026
+startdate: 01/2026
+enddate: 05/2026
 grad-student: false
 ug-student: true
 alumni: true

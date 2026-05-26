@@ -7,7 +7,8 @@ jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
 linkedinurl: ""
-startdate: 2025
+startdate: 04/2025
+enddate: 05/2026
 grad-student: false
 ug-student: true
 alumni: true
