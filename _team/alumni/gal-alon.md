@@ -12,6 +12,7 @@ paragraph-projectdescription : "The project focuses on developing a more capable
 startdate: 2025
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
+next_position: "Master's at Cornell University"
 ---
 

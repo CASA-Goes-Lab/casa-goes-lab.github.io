@@ -12,6 +12,7 @@ paragraph-projectdescription : "This project develops a dual-camera indoor posit
 startdate: 2023
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
+next_position: "Siemens"
 ---
 

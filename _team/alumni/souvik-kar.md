@@ -13,6 +13,7 @@ paragraph-projectdescription : "My work focuses on expanding and refining the Py
 startdate: 2024
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
+next_position: "West Shore Home"
 ---
 

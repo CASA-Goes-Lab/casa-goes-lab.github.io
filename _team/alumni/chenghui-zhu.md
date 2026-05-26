@@ -1,7 +1,7 @@
 ---
-title: "Daniel Miller"
+title: "Chenghui Zhu"
 date: 2025-06-19
-image: "images/team/undergrad/daniel-miller.jpg"
+image: "images/team/undergrad/chenghui-zhu.jpg"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -10,6 +10,7 @@ linkedinurl: ""
 startdate: 2025
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
+next_position: "Westinghouse Electric Company"
 ---
 

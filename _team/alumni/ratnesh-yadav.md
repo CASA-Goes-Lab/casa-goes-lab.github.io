@@ -16,6 +16,6 @@ enddate: 05/2025
 grad-student: true
 ug-student: false
 alumni: true
-next_position: ""
+next_position: "Meta (via Beyondsoft)"
 ---
 

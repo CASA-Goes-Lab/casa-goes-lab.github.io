@@ -14,6 +14,7 @@ paragraph-projectdescription : "This project integrates a Duckiebot with an Inte
 startdate: 2025
 grad-student: false
 ug-student: true
-alumni: false
+alumni: true
+next_position: ""
 ---
 
