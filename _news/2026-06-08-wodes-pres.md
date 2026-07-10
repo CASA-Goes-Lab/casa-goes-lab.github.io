@@ -1,7 +1,7 @@
 ---
 date: 2026-06-09
 title: "2026 WODES Presentation"
-image: "/images/news/2026/sj-wodes26.jpg"
+image: "/images/news/2026/sj-wodes26.JPG"
 ---
 
 Shih-Jie doing a great job on his [2026 Workshop on Discrete Event Systems (WODES)](https://wodes2026.events.tue.nl/) paper presentation. 
