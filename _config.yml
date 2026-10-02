@@ -3,10 +3,10 @@ permalink: pretty
 title: 'Casa Góes Lab'
 
 logo:
-  mobile: "images/logo/logo-v2.svg"
+  mobile: "images/logo/casagoesnotext.svg"
   mobile_height: "40px"
   mobile_width: "40px"
-  desktop: "images/logo/logo-v2.svg"
+  desktop: "images/logo/casagoesnotext.svg"
   desktop_height: "60px"
   desktop_width: "120px"
 
