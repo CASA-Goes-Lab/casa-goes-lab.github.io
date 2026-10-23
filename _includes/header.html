@@ -1,17 +1,14 @@
-<div class='header'>
-  <div class="container">
-
-    <!-- For image logo after complete the casa goes logo -->
-    <div class="logo">
-      <a href="{{ site.baseurl }}"><img width="{{ site.logo.desktop_width }}" height="{{ site.logo.desktop_height }}" alt="{{ site.title }}" src="{{ site.logo.desktop | relative_url }}" /></a>
-    </div>
-    <!-- <div class="logo">
-      <a href="{{ site.baseurl }}">Casa Góes Lab</a>
-    </div> -->
-    <div class="logo-mobile">
-      <a href="{{ site.baseurl }}"><img width="{{ site.logo.mobile_width }}" height="{{ site.logo.mobile_height }}" alt="{{ site.title }}" src="{{ site.logo.mobile | relative_url }}" /></a>
-    </div>
-    {% include main-menu.html %}
-    {% include hamburger.html %}
-  </div>
-</div>
+<header class="site-header container{% unless page.layout == 'home' %} site-header--divided{% endunless %}">
+  <a class="site-name" href="{{ '/' | relative_url }}">
+    <img src="{{ '/images/logo/CasaGoesLogoNoText.png' | relative_url }}" alt="" width="120" height="60">
+    <span>Casa Góes Lab</span>
+  </a>
+  <nav aria-label="Main navigation">
+    <ul>
+      <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a></li>
+      <li><a href="{{ '/research/' | relative_url }}"{% if page.url == '/research/' %} aria-current="page"{% endif %}>Research</a></li>
+      <li><a href="{{ '/team/' | relative_url }}"{% if page.url == '/team/' %} aria-current="page"{% endif %}>Team</a></li>
+      <li><a href="{{ '/publications/' | relative_url }}"{% if page.url == '/publications/' %} aria-current="page"{% endif %}>Publications</a></li>
+    </ul>
+  </nav>
+</header>

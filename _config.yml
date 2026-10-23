@@ -1,54 +1,26 @@
-baseurl: ''
+title: Casa Góes Lab
+description: Controlling Autonomous Systems with Assurances
+url: "https://casa-goes-lab.github.io"
+baseurl: ""
 permalink: pretty
-title: 'Casa Góes Lab'
-
-logo:
-  mobile: "images/logo/casagoesnotext.svg"
-  mobile_height: "40px"
-  mobile_width: "40px"
-  desktop: "images/logo/casagoesnotext.svg"
-  desktop_height: "60px"
-  desktop_width: "120px"
-
-home: 
-  limit_services: 3
 
 collections:
-  research:
-    output: true
-  #   sort_by: weight
   team:
-    output: true
-    parmalink: /team/:path/
+    output: false
   news:
     output: false
 
 defaults:
-  # - scope:
-  #     path: ""
-  #     type: "services"
-  #   values:
-  #     layout: "service"
   - scope:
       path: ""
-      type: "Team"
     values:
-      layout: "team"
-
-sass:
-  style: compressed # possible values: nested expanded compact compressed
-
-plugins:
-  - jekyll-environment-variables
+      layout: page
 
 exclude:
+  - _archive
+  - vendor
+  - .bundle
+  - .github
+  - README.md
   - Gemfile
   - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-  - LICENSE.md
-  - LICENSE
-  - README.md

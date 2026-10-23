@@ -1,21 +1,17 @@
 ---
 title: "Md-Nur-Adam Dony"
-date: 2023-09-01
-image: "images/team/undergrad/md-dony.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
+date_left: "2025-05"
+image: "images/team/md-dony.jpg"
+category: alumni
 jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
 linkedinurl: ""
-sentence-projectdescription : ""
-paragraph-projectdescription : ""
-startdate: 09/2023
+startdate: "2023-09"
 enddate: 05/2025
-grad-student: true
-ug-student: false
-alumni: true
 next_position: ""
+sentence-projectdescription: ""
+paragraph-projectdescription: ""
 ---
 

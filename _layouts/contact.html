@@ -1,17 +1,17 @@
 ---
-title: Contact
-layout: default
-bodyClass: "page-contact"
+layout: page
 ---
-
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-    <div class="row justify-content-start">
-        <div class="col-12 col-md-8">
-            <div class="service service-single">
-                <h1 class="title">{{page.title}}</h1>
-                {% include call.html show_button=false %}
-                <div class="content mt-4">{{content}}</div>
-            </div>
-        </div>
-    </div>
-</div>
+{{ content }}
+{% if page.email or page.phone or page.address %}
+<address>
+  {% if page.email %}
+  <p><a href="mailto:{{ page.email | escape }}">{{ page.email | escape }}</a></p>
+  {% endif %}
+  {% if page.phone %}
+  <p>{{ page.phone | escape }}</p>
+  {% endif %}
+  {% if page.address %}
+  <p>{{ page.address | escape | newline_to_br }}</p>
+  {% endif %}
+</address>
+{% endif %}

@@ -1,15 +1,49 @@
 ---
 layout: default
-bodyClass: "page-team"
 ---
-
-<div class="container pb-6 pt-6 pt-md-10 pb-md-10">
-  <div class="row justify-content-start">
-    <div class="col-12 col-md-8">
-      <div class="team team-single">
-        <h1 class="title">{{page.title}}</h1>
-        <div class="content">{{content}}</div>
-      </div>
-    </div>
-  </div>
-</div>
+<img class="group-photo" src="{{ '/images/team/cg-group-f25.JPG' | relative_url }}" alt="Team Group Photo" width="1100" height="400">
+{{ content }}
+{% assign professor = site.team | where: 'category', 'faculty' | first %}
+{% if professor %}
+<section class="people-section professor">
+  <h2>{{ professor.title | escape }}</h2>
+  <img class="portrait" src="{{ professor.image | relative_url }}" alt="{{ professor.title | escape }}" width="160" height="160">
+  <p>{{ professor.jobtitle | escape }}</p>
+  <p>{{ professor.jobdpt | escape }}</p>
+  <p>{{ professor.email | escape }}</p>
+</section>
+{% endif %}
+{% assign graduates = site.team | where: 'category', 'grad' | sort: 'startdate' %}
+{% assign undergraduates = site.team | where: 'category', 'undergrad' | sort: 'startdate' %}
+{% for group in (1..2) %}
+<section class="people-section">
+  {% if group == 1 %}
+  <h2>Graduate Students</h2>
+  {% assign members = graduates %}
+  {% else %}
+  <h2>Undergraduate Students</h2>
+  {% assign members = undergraduates %}
+  {% endif %}
+  <ul class="people-grid">
+    {% for member in members %}
+    {% assign portrait = member.image %}
+    {% assign portrait_path = portrait | prepend: '/' | replace: '//', '/' %}
+    {% assign portrait_file = site.static_files | where: 'path', portrait_path | first %}
+    {% if member.placeholder or portrait_file == nil %}{% assign portrait = '/images/team/placeholder.jpg' %}{% endif %}
+    <li>
+      <img class="portrait" src="{{ portrait | relative_url }}" alt="{{ member.title | escape }}" width="160" height="160" loading="lazy">
+      <h3>{{ member.title | escape }}</h3>
+      {% if group == 1 %}
+      <p>{{ member.jobtitle | escape }}</p>
+      <p>{{ member.jobdpt | escape }}</p>
+      {% if member.topic %}<p>{{ member.topic | escape }}</p>{% endif %}
+      {% endif %}
+      {% if member.major and member.major != '' %}<p>Major: {{ member.major | escape }}</p>{% endif %}
+      {% if group == 2 and member.class_standing and member.class_standing != '' %}<p>Year: {{ member.class_standing | escape }}</p>{% endif %}
+      {% if member.linkedinurl contains 'linkedin.com/in/' %}<p><a href="{{ member.linkedinurl | escape }}">LinkedIn</a></p>{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+<p class="alumni-link"><a href="{{ '/alumni/' | relative_url }}">See our Alumni</a></p>

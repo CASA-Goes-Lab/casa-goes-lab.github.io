@@ -1,0 +1,20 @@
+---
+layout: page
+---
+{{ content }}
+<ul class="people-grid">
+  {% assign alumni = site.team | where: 'category', 'alumni' | sort: 'date_left' | reverse %}
+  {% for member in alumni %}
+  {% assign portrait = member.image %}
+  {% assign portrait_path = portrait | prepend: '/' | replace: '//', '/' %}
+  {% assign portrait_file = site.static_files | where: 'path', portrait_path | first %}
+  {% if member.placeholder or portrait_file == nil %}{% assign portrait = '/images/team/placeholder.jpg' %}{% endif %}
+  <li>
+    <img class="portrait" src="{{ portrait | relative_url }}" alt="{{ member.title | escape }}" width="160" height="160" loading="lazy">
+    <h3>{{ member.title | escape }}</h3>
+    <p>{{ member.jobtitle | escape }}</p>
+    <p>{{ member.startdate | split: '-' | reverse | join: '/' }} - {{ member.enddate }}</p>
+    {% if member.next_position and member.next_position != '' %}<p>Next: {{ member.next_position | escape }}</p>{% endif %}
+  </li>
+  {% endfor %}
+</ul>

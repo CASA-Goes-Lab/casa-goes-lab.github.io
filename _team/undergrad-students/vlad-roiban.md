@@ -1,15 +1,14 @@
 ---
 title: "Vlad Roiban"
-date: 2025-06-19
-image: "images/team/undergrad/vlad-roiban.jpg"
+image: "images/team/vlad-roiban.jpg"
+category: undergrad
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
+class_standing: "Junior"
 email: ""
 linkedinurl: ""
-startdate: 2024
-grad-student: false
-ug-student: true
-alumni: false
+startdate: "2024"
+date_left: "NA"
 ---
 
