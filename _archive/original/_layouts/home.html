@@ -1,0 +1,147 @@
+---
+layout: default
+bodyClass: "page-home"
+---
+
+
+<div
+  class="bg-image"
+>
+
+<div class="intro">
+  <!-- <div class="container-fluid"> -->
+    <!-- <div class="row d-flex justify-content-center"> -->
+      <!-- <div class="col-12" style = "display: flex; /* Makes the container a flex container */ -->
+      <!-- justify-content: center; /* Centers content horizontally along the main axis */ -->
+      <!-- align-items: center; height: 1vh; text-align: center; width: 100vh;" > -->
+       <div class="row d-flex justify-content-center">
+       <!-- <div class = "col-9"> -->
+        {{ content }}
+        {% if page.show_call_box %}
+          {% include call.html show_button=true %}
+        {% endif %}
+        </div>
+      <!-- </div> -->
+      <!-- {% if page.intro_image %}
+      <div class="col-12 col-md-3 col-lg-3 order-1 order-md-2 position-relative">
+        <img alt="{{ page.title }}" class="intro-image{% if page.intro_image_absolute %} intro-image-absolute{% endif %}{% if page.intro_image_hide_on_mobile %} intro-image-hide-mobile{% endif %}" src="{{ page.intro_image | relURL }}" />
+      </div>
+      {% endif %} -->
+    <!-- </div> -->
+  <!-- </div> -->
+</div>
+</div>
+
+
+<!-- Mission -->
+<div class="strip">
+  <div class="container pt-2 pb-2 pb-md-2">
+    <div class="card">
+      <h1 class="service-title" style="text-align: center;margin-bottom: 4px">
+      Casa Góes Lab Mission
+      </h1>
+      <div class="underline_mission"></div>
+      <p style="text-align: center; font-size: larger;">
+      We develop first principle methods to analyze and design complex systems with strong resilience, security and safety guarantees.    
+      </p>
+      <p style="text-align: center; font-size: large;">
+      To achieve these goals, we leverage control and formal methods techniques for modeling, analysis, and design of complex systems.
+      Specifically, our group combines discrete event and hybrid systems, supervisory control, and temporal logics.
+      Our applications domains include critical infrastructure control systems (manufacturing, water, and transportation), robotics, software systems, and human behavioral systems.
+      </p> 
+   </div>
+  </div>
+</div>
+<!-- Recent projects descriptions
+<div class="strip strip-grey">
+  <div class="container pt-6 pb-2 pb-md-2">
+    <h2 class="service-title" style="text-align: center;">Recent Projects</h2>
+    <br>
+    <div class="row justify-content-start">
+      {% assign limit = site.home.limit_services | default: 6 %}
+      {% for service in site.services limit: limit %}
+      <div class="col-12 col-md-4 mb-1">
+        <div class="service service-summary">
+          
+          <div class="service-content">
+            <h2 class="service-title">
+              <a href="{{ service.url | relative_url }}">{{ service.title }}</a>
+            </h2>
+            <p>{{ service.excerpt | markdownify | strip_html | truncate: 100 }}</p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-auto">
+        <a class="button button-primary" href="{{ "services" | relative_url }}">View All Services</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <hr class="custom-hr"> -->
+
+
+<!-- Lab news coming from an MD file similar to Teams  -->
+<!-- Lab news -->
+<div class="strip">
+  <div class="container pt-2 pb-2 pb-md-2">
+
+    <!-- <div class="col-12 col-md-6 col-lg-12 mb-2" style= "height: 300px;"> -->
+      <div class="card">
+      <h1 class="service-title" style="text-align: center;margin-bottom: 4px">
+      Lab News
+      </h1>
+      <div class="underline"></div>
+      {% if site.news %}
+        {% assign news_items = site.news | sort: "date" | reverse | limit: 6 %}
+        <div class="news-list">
+        {% for news in news_items %}
+        <div class="news-entry{% if news.image %} has-image{% endif %}">
+          <div class="news-date">{{ news.date | date: "%b %Y" }}</div>
+          <div class="news-triangle">▶</div>
+          <div class="news-content">{{ news.content | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+          {% if news.image %}
+          <div class="news-image"><img src="{{ news.image | relative_url }}" alt="{{ news.title }}" /></div>
+          {% endif %}
+        </div>
+        {% endfor %}
+        </div>
+      {% endif %}
+      </div>
+  </div>
+</div>
+
+<!-- <br> -->
+{% if site.data.features %}
+<div class="strip strip-primary-gradient-top-bottom-sec">
+  
+  <div class="container pt-2 pb-2 pt-md-2 pb-md-2">
+    <h2 class="service-title" style="text-align: center; color: white">Recent Projects</h2>
+    <div class="row pt-2 justify-content-center">
+      {% for feature in site.data.features %}
+      <div class="col-12 col-md-6 col-lg-4 mb-2">
+        {% if feature.image %}
+        <div class="card">
+        <div class="feature">
+          <div class="feature-image"><img alt="{{ feature.title }} logo" src="{{ feature.image.url | relative_url }}" width="{{ feature.image.width }}" height="{{ feature.image.height }}" /></div>
+          <h2 class="feature-title">{{ feature.title }}</h2>
+          <div class="feature-content">{{ feature.description }}</div>
+        </div>
+        </div>
+        {% else %}
+        <div class="card_feature">
+        <div class="feature-no-image">
+          <h2 class="feature-title">{{ feature.title }}</h2>
+        </div>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+{% endif %}

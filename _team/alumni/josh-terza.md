@@ -1,21 +1,17 @@
 ---
 title: "Josh Terza"
-date: 2025-06-19
-image: "images/team/undergrad/josh-terza.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
+date_left: "2025-12"
+image: "images/team/josh-terza.jpg"
+category: alumni
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Enginerring
 email: ""
 linkedinurl: ""
-sentence-projectdescription : ""
-paragraph-projectdescription : ""
-startdate: 06/2025
+startdate: "2025-06"
 enddate: 12/2025
-grad-student: false
-ug-student: true
-alumni: true
 next_position: ""
+sentence-projectdescription: ""
+paragraph-projectdescription: ""
 ---
 

@@ -1,0 +1,10 @@
+---
+layout: page
+---
+{% assign portrait = page.image %}
+{% if page.placeholder or portrait == nil %}{% assign portrait = '/images/team/placeholder.png' %}{% endif %}
+<img class="portrait" src="{{ portrait | relative_url }}" alt="{{ page.title | escape }}" width="160" height="160">
+{% if page.jobtitle %}<p>{{ page.jobtitle | escape }}</p>{% endif %}
+{% if page.jobdpt %}<p>{{ page.jobdpt | escape }}</p>{% endif %}
+{% if page.email %}<p>{{ page.email | escape }}</p>{% endif %}
+{{ content }}

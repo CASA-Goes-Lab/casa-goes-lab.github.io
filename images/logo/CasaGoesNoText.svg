@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xl="http://www.w3.org/1999/xlink" viewBox="9070 1610 650 300" width="1000" height="600">
+  <defs>
+    <radialGradient cx="0" cy="0" r="1" id="a" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d5fed6"/>
+      <stop offset=".684" stop-color="#90d37a"/>
+      <stop offset="1" stop-color="#3ca600"/>
+    </radialGradient>
+    <radialGradient id="f" xl:href="#a" gradientTransform="translate(9314.675 1883.603)scale(21.2132)"/>
+    <radialGradient cx="0" cy="0" r="1" id="b" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#d6d7ff"/>
+      <stop offset=".684" stop-color="#7997ff"/>
+      <stop offset="1" stop-color="#0052ff"/>
+    </radialGradient>
+    <radialGradient id="g" xl:href="#b" gradientTransform="translate(9527.555 1895.792)scale(21.2132)"/>
+    <radialGradient id="h" xl:href="#a" gradientTransform="translate(9154 1680.781)scale(21.2132)"/>
+    <radialGradient id="i" xl:href="#a" gradientTransform="translate(9154 1822.896)scale(21.2132)"/>
+    <radialGradient id="j" xl:href="#b" gradientTransform="translate(9429.436 1698.426)scale(21.2132)"/>
+    <radialGradient id="k" xl:href="#b" gradientTransform="translate(9610.178 1636.857)scale(21.2132)"/>
+    <radialGradient id="l" xl:href="#b" gradientTransform="translate(9610.178 1773.784)scale(21.2132)"/>
+    <radialGradient id="m" xl:href="#b" gradientTransform="translate(9509.169 1773.784)scale(21.2132)"/>
+    <radialGradient id="n" xl:href="#a" gradientTransform="translate(9314.675 1627.208)scale(21.2132)"/>
+    <filter id="c" filterUnits="userSpaceOnUse" x="8871.814" y="1542.77">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="-5.333"/>
+      <feOffset in="blur" result="offset" dy="2"/>
+      <feFlood flood-color="#000" flood-opacity=".75" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="e" filterUnits="userSpaceOnUse" x="8871.814" y="1542.77">
+      <feGaussianBlur in="SourceAlpha" result="blur" stdDeviation="-5.333"/>
+      <feOffset in="blur" result="offset" dy="5"/>
+      <feFlood flood-color="#000" flood-opacity=".75" result="flood"/>
+      <feComposite in="flood" in2="offset" operator="in" result="color"/>
+      <feMerge>
+        <feMergeNode in="color"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker orient="auto" overflow="visible" markerUnits="strokeWidth" id="d" stroke-linejoin="miter" stroke-miterlimit="10" viewBox="-1 -2 5 4" markerWidth="5" markerHeight="4" color="#000">
+      <path d="M2.311 0 0-.867V.867Z" fill="currentColor" stroke="currentColor"/>
+    </marker>
+  </defs>
+  <g fill="none">
+    <title>Canvas 1</title>
+    <title>Logo</title>
+    <g filter="url(#c)">
+      <path d="M9160.025 1838.261c7.259 14.554 22.168 35.723 50.384 46.383 17.615 6.656 37.212 8.004 54.618 7.156" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <g filter="url(#e)">
+      <path d="M9426.256 1714.618c-4.812 28.506-11.356 88.54 9.191 129.87 10.782 21.69 27.058 34.271 42.943 41.548" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <g filter="url(#e)">
+      <path d="M9544.045 1896.388c18.101-.574 46.607-5.325 61.816-27.785 8.756-12.93 11.565-29.452 11.652-45.071" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <path d="M9325.282 1872.996c5.858 5.858 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" fill="url(#f)"/>
+    <path d="M9325.282 1872.996c5.858 5.858 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <circle cx="9527.555" cy="1895.792" r="15" fill="url(#g)"/>
+    <circle cx="9527.555" cy="1895.792" r="15" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <g filter="url(#e)">
+      <path d="M9595.298 1629.717c-20.038-8.4-57.231-19.782-92.229-7.86-20.092 6.844-35.753 20.105-47.367 33.694" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <g filter="url(#e)">
+      <path d="M9594.48 1768.691c-7.443-1.705-17.376-3.181-29.464-3.181-2.076 0-4.145.043-6.197.124" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <g filter="url(#c)">
+      <path d="M9147.141 1695.793c-3.951 10.947-8.141 27.572-8.141 48.851 0 10.172.957 20.198 2.388 29.504" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <g filter="url(#c)">
+      <path d="M9298.559 1623.66c-18.468-3.191-50.006-6.019-79.579 3.841-12.292 4.099-22.683 9.869-31.304 16.109" marker-end="url(#d)" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-width="9"/>
+    </g>
+    <circle cx="9154" cy="1680.781" r="15" fill="url(#h)"/>
+    <circle cx="9154" cy="1680.781" r="15" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <circle cx="9154" cy="1822.896" r="15" fill="url(#i)"/>
+    <circle cx="9154" cy="1822.896" r="15" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <circle cx="9429.436" cy="1698.426" r="15" fill="url(#j)"/>
+    <circle cx="9429.436" cy="1698.426" r="15" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path d="M9620.785 1626.25c5.858 5.858 5.858 15.356 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" fill="url(#k)"/>
+    <path d="M9620.785 1626.25c5.858 5.858 5.858 15.356 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path d="M9620.785 1763.177c5.858 5.858 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" fill="url(#l)"/>
+    <path d="M9620.785 1763.177c5.858 5.858 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.355 0-21.213 15.355-5.858 21.213 0" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path d="M9519.776 1763.177c5.858 5.858 5.858 15.355 0 21.213s-15.356 5.858-21.214 0-5.857-15.355 0-21.213 15.356-5.858 21.214 0" fill="url(#m)"/>
+    <path d="M9519.776 1763.177c5.858 5.858 5.858 15.355 0 21.213s-15.356 5.858-21.214 0-5.857-15.355 0-21.213 15.356-5.858 21.214 0" stroke="#003776" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+    <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="10" d="m9414.436 1606.073-77.143 304.719"/>
+    <path d="M9325.282 1616.602c5.858 5.857 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.356 0-21.213 15.355-5.858 21.213 0" fill="url(#n)"/>
+    <path d="M9325.282 1616.602c5.858 5.857 5.858 15.355 0 21.213s-15.355 5.858-21.213 0-5.858-15.356 0-21.213 15.355-5.858 21.213 0" stroke="#3ca600" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>

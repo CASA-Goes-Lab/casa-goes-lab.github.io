@@ -1,21 +1,17 @@
 ---
 title: "Greg Westfall"
-date: 2024-01-01
-image: "images/team/undergrad/greg-westfall.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
+date_left: "2025-05"
+image: "images/team/greg-westfall.jpg"
+category: alumni
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
 linkedinurl: ""
-sentence-projectdescription : ""
-paragraph-projectdescription : ""
-startdate: 01/2024
+startdate: "2024-01"
 enddate: 05/2025
-grad-student: false
-ug-student: true
-alumni: true
 next_position: "Westinghouse Electric Company"
+sentence-projectdescription: ""
+paragraph-projectdescription: ""
 ---
 

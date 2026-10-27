@@ -1,14 +1,13 @@
 ---
 title: "Parastou Fahim"
-date: 2025-06-19
-image: "images/team/grad/parastou-fahim.jpg"
+date_left: "2025-06-19"
+image: "images/team/parastou-fahim.jpg"
+category: grad
 jobtitle: "Ph.D. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 email: ""
-startdate: 2023
 linkedinurl: "a"
-alumni: false
-grad-student: true
+startdate: "2023"
 weight: 1
 ---
 

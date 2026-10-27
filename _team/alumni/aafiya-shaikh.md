@@ -1,20 +1,19 @@
 ---
 title: "Aafiya Shaikh"
-date: 2026-01-01
-image: "images/team/grad/aafiya-shaikh.jpg"
+date_left: "2026-05"
+image: "images/team/aafiya-shaikh.jpg"
+category: alumni
 placeholder: true
 placeholder_loc: "images/team/placeholder.png"
 jobtitle: "M.S. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
-email:
+email: 
 linkedinurl: ""
-sentence-projectdescription : ""
-paragraph-projectdescription : ""
-startdate: 10/2025
+startdate: "2025-10"
 enddate: 05/2026
-grad-student: true
-alumni: true
 next_position: "Boeing Company"
+sentence-projectdescription: ""
+paragraph-projectdescription: ""
 weight: 2
 ---
 
