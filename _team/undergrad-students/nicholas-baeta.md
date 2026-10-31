@@ -7,7 +7,7 @@ jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 class_standing: "Sophomore"
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/nicolas-baeta/"
 startdate: "2025"
 date_left: "NA"
 ---

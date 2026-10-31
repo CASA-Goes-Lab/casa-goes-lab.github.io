@@ -2,8 +2,6 @@
 title: "Austin Collins"
 date: 2023-06-01
 image: "images/team/undergrad/collin-ross.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "University of Maryland, Baltimore County"
 major: Mechanical Engineering

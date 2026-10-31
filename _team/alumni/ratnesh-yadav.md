@@ -7,7 +7,7 @@ jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/ratneshyadav06/"
 startdate: "2023-09"
 enddate: 05/2025
 next_position: "Meta (via Beyondsoft)"

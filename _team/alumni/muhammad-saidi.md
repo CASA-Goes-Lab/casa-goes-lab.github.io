@@ -3,8 +3,6 @@ title: "Muhammad Saidi"
 date_left: "2026-05"
 image: "images/team/muhammad-saidi.jpg"
 category: alumni
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering

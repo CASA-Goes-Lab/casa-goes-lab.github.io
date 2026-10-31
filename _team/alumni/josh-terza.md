@@ -7,7 +7,7 @@ jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Enginerring
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/josh-terza-ab97252b1/"
 startdate: "2025-06"
 enddate: 12/2025
 next_position: ""

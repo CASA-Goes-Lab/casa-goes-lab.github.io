@@ -1,10 +1,8 @@
 ---
 title: "Carmen Beleho"
 date_left: "2024-08"
-image: "images/team/collin-ross.jpg"
+image: "images/team/carmen-beleho.jpg"
 category: alumni
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "University of Maryland, Baltimore County"
 major: "Information Systems"
