@@ -2,7 +2,19 @@
 
 Jekyll site built with HTML, Liquid, and one stylesheet.
 
-## Run locally
+## Run locally with Docker (recommended)
+
+With Docker Desktop running, from the repository folder:
+
+```sh
+docker compose up --build
+```
+
+Open http://localhost:4000. The site rebuilds and the browser reloads whenever you save a file. Stop it with `Ctrl+C` (or `docker compose down`). The image uses the same Ruby version as the GitHub Actions build. Run `--build` again after changing the `Gemfile`.
+
+If the folder is synced by OneDrive, mark it "Always keep on this device"; cloud-only placeholder files cannot be read inside the container (`Errno::EDEADLK`).
+
+## Run locally with Ruby
 
 Install Ruby 4.0 and Bundler, then run:
 
