@@ -1,7 +1,14 @@
 ---
 layout: default
 ---
-<img class="group-photo" src="{{ '/images/team/cg-group-f25.JPG' | relative_url }}" alt="Team Group Photo" width="1100" height="400">
+<div class="team-gallery">
+  <input class="slideshow-pause" type="checkbox" id="pause-team-slideshow" aria-label="Pause slideshow">
+  <label for="pause-team-slideshow" title="Pause or resume slideshow"><span aria-hidden="true"></span></label>
+  <div class="group-slideshow">
+    <img class="group-photo" src="{{ '/images/team/teamphoto-FA26.jpg' | relative_url }}" alt="Casa Góes Lab team, fall 2026" width="1100" height="400">
+    <img class="group-photo" src="{{ '/images/team/cg-group-f25.JPG' | relative_url }}" alt="Casa Góes Lab team, fall 2025" width="1100" height="400">
+  </div>
+</div>
 {{ content }}
 {% assign professor = site.team | where: 'category', 'faculty' | first %}
 {% if professor %}
@@ -46,4 +53,4 @@ layout: default
   </ul>
 </section>
 {% endfor %}
-<p class="alumni-link"><a href="{{ '/alumni/' | relative_url }}">See our Alumni</a></p>
+<p class="alumni-link"><a href="{{ '/alumni/' | relative_url }}">See our Alumni here</a></p>

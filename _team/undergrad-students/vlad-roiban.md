@@ -7,7 +7,7 @@ jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 class_standing: "Junior"
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/vlad-roiban/"
 startdate: "2024"
 date_left: "NA"
 ---

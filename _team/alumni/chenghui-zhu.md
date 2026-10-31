@@ -7,7 +7,7 @@ jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/chenghui-zhu/"
 startdate: "2024-09"
 enddate: 05/2026
 next_position: ""

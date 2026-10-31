@@ -7,7 +7,7 @@ jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
 email: ""
-linkedinurl: ""
+linkedinurl: "https://www.linkedin.com/in/greg-westfall/"
 startdate: "2024-01"
 enddate: 05/2025
 next_position: "Westinghouse Electric Company"

@@ -6,7 +6,7 @@ category: grad
 jobtitle: "Ph.D. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 email: ""
-linkedinurl: "a"
+linkedinurl: "https://www.linkedin.com/in/parastou-fahim/"
 startdate: "2023"
 weight: 1
 ---

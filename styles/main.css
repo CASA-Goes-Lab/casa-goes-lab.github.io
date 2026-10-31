@@ -343,13 +343,103 @@ nav a[aria-current='page'] {
 }
 
 /* Team and alumni */
+.team-gallery {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.team-gallery + h1 {
+  padding-right: 3rem;
+}
+
+.group-slideshow {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
 .group-photo {
   width: 100%;
   height: auto;
   max-height: 400px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 2rem;
+}
+
+.group-photo:last-child {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  opacity: 0;
+  animation: team-photo-fade 20s infinite;
+}
+
+.slideshow-pause {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.team-gallery label {
+  position: absolute;
+  top: calc(100% + 2rem + 0.35rem);
+  right: 0;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--navy);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.team-gallery label span {
+  width: 10px;
+  height: 14px;
+  border-inline: 3px solid currentColor;
+}
+
+.team-gallery label:hover {
+  background: #edf3f9;
+}
+
+.slideshow-pause:checked + label {
+  background: var(--navy);
+  color: #fff;
+}
+
+.slideshow-pause:focus-visible + label {
+  outline: 3px solid #1e88e5;
+  outline-offset: 4px;
+}
+
+.slideshow-pause:checked ~ .group-slideshow .group-photo:last-child {
+  animation-play-state: paused;
+}
+
+@keyframes team-photo-fade {
+  0%, 40%, 100% {
+    opacity: 0;
+  }
+
+  50%, 90% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .group-photo:last-child {
+    animation: none;
+  }
+
+  .slideshow-pause,
+  .team-gallery label {
+    display: none;
+  }
 }
 
 .people-section {
@@ -369,6 +459,7 @@ nav a[aria-current='page'] {
   width: 160px;
   height: 160px;
   object-fit: cover;
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
@@ -400,6 +491,24 @@ nav a[aria-current='page'] {
   border-top: 1px solid #ccc;
   padding-top: 2rem;
   font-size: 1.1rem;
+}
+
+.alumni-link a {
+  display: inline-block;
+  padding: 2rem 3rem;
+  border-radius: 6px;
+  background: var(--blue);
+  color: var(--navy);
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}
+
+.alumni-link a:hover,
+.alumni-link a:focus-visible {
+  color: white;
+  border-color: #1e407c;
+  background: #1e407c;
 }
 
 /* Responsive layouts without a menu script or fixed-width wrappers. */

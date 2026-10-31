@@ -2,8 +2,6 @@
 title: "Collin Ross"
 date: 2024-07-01
 image: "images/team/undergrad/collin-ross.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering

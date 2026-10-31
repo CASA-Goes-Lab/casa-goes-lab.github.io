@@ -2,8 +2,6 @@
 title: "Md-Nur-Adam Dony"
 date: 2023-09-01
 image: "images/team/undergrad/md-dony.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering

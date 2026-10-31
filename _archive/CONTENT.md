@@ -1395,8 +1395,6 @@ Owner's equity, sometimes referred to as net assets, is represented differently 
 title: "Aafiya Shaikh"
 date: 2026-01-01
 image: "images/team/grad/aafiya-shaikh.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "M.S. Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 email:
@@ -1421,8 +1419,6 @@ weight: 2
 title: "Austin Collins"
 date: 2023-06-01
 image: "images/team/undergrad/collin-ross.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "University of Maryland, Baltimore County"
 major: Mechanical Engineering
@@ -1449,8 +1445,6 @@ next_position: "Ph.D. at University of Michigan"
 title: "Carmen Beleho"
 date: 2024-06-01
 image: "images/team/undergrad/collin-ross.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "University of Maryland, Baltimore County"
 major: "Information Systems"
@@ -1500,8 +1494,6 @@ next_position: ""
 title: "Collin Ross"
 date: 2024-07-01
 image: "images/team/undergrad/collin-ross.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1576,8 +1568,6 @@ next_position: "Master's at Cornell University"
 title: "Greg Westfall"
 date: 2024-01-01
 image: "images/team/undergrad/greg-westfall.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1603,8 +1593,6 @@ next_position: "Westinghouse Electric Company"
 title: "Josh Terza"
 date: 2025-06-19
 image: "images/team/undergrad/josh-terza.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Enginerring
@@ -1630,8 +1618,6 @@ next_position: ""
 title: "Matthew Ibarra"
 date: 2026-01-01
 image: "images/team/undergrad/harwin-bernard.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "Electrical Engineering Department"
 major: Electrical Engineering
@@ -1655,8 +1641,6 @@ next_position: "Boeing Company"
 title: "Md-Nur-Adam Dony"
 date: 2023-09-01
 image: "images/team/undergrad/md-dony.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1682,8 +1666,6 @@ next_position: ""
 title: "Muhammad Saidi"
 date: 2025-06-19
 image: "images/team/undergrad/muhammad-saidi.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1709,8 +1691,6 @@ next_position: ""
 title: "Ratnesh Yadav"
 date: 2023-09-01
 image: "images/team/undergrad/ratnesh-yadav.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Master Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1848,8 +1828,6 @@ professor: true
 title: "Harwin Bernard"
 date: 2026-01-01
 image: "images/team/undergrad/harwin-bernard.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "Aerospace Engineering Department"
 major: Aerospace Engineering
@@ -1893,8 +1871,6 @@ alumni: false
 title: "Liam Rodgers"
 date: 2026-01-01
 image: "images/team/undergrad/liam-rodgers.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering
@@ -1916,8 +1892,6 @@ alumni: false
 title: "Nicolas Baeta"
 date: 2026-01-01
 image: "images/team/undergrad/nick-baeta.jpg"
-placeholder: true
-placeholder_loc: "images/team/placeholder.png"
 jobtitle: "Undergraduate Student"
 jobdpt: "School of Electrical Engineering and Computer Science"
 major: Electrical Engineering

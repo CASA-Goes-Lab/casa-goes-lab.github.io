@@ -15,6 +15,7 @@ layout: page
     <p>{{ member.jobtitle | escape }}</p>
     <p>{{ member.startdate | split: '-' | reverse | join: '/' }} - {{ member.enddate }}</p>
     {% if member.next_position and member.next_position != '' %}<p>Next: {{ member.next_position | escape }}</p>{% endif %}
+    {% if member.linkedinurl contains 'linkedin.com/in/' %}<p><a href="{{ member.linkedinurl | escape }}">LinkedIn</a></p>{% endif %}
   </li>
   {% endfor %}
 </ul>
