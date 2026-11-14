@@ -586,8 +586,9 @@ nav a[aria-current='page'] {
 
 .pub-list > li {
   display: grid;
-  grid-template-columns: 6rem minmax(0, 1fr);
+  grid-template-columns: 6rem minmax(0, 1fr) 200px;
   column-gap: 1rem;
+  align-items: start;
   padding-block: 0.9rem;
   border-top: 1px solid var(--border);
 }
@@ -595,6 +596,13 @@ nav a[aria-current='page'] {
 .pub-list > li:first-child {
   border-top: 0;
   padding-top: 0;
+}
+
+.pub-thumb {
+  width: 100%;
+  max-height: 130px;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .pub-meta {
@@ -638,6 +646,17 @@ nav a[aria-current='page'] {
 .pub-link:hover {
   background: var(--blue);
   text-decoration: none;
+}
+
+/* Paper figures need room beside the text; drop them on narrower screens. */
+@media (max-width: 900px) {
+  .pub-list > li {
+    grid-template-columns: 6rem minmax(0, 1fr);
+  }
+
+  .pub-thumb {
+    display: none;
+  }
 }
 
 /* Responsive layouts without a menu script or fixed-width wrappers. */

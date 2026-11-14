@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publication Figures</title>
+<style>
+  :root { --navy: #001e44; --blue: #96bee6; --text: #2f2f41; --muted: #5c5a5a; --border: #e0e0e0; --ok: #2e7d32; --warn: #b26a00; }
+  * { box-sizing: border-box; }
+  body { margin: 0; color: var(--text); background: #f6f8fb; font: 15px/1.45 Helvetica, Arial, sans-serif; }
+  header { position: sticky; top: 0; z-index: 5; background: var(--navy); color: #fff; padding: 14px 24px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+  header h1 { margin: 0; font: 400 1.4rem Georgia, serif; }
+  header .count { color: var(--blue); }
+  .filters { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+  .filters button { border: 1px solid var(--blue); background: transparent; color: #fff; border-radius: 6px; padding: 5px 12px; cursor: pointer; font: inherit; }
+  .filters button[aria-pressed="true"] { background: var(--blue); color: var(--navy); }
+  header input { padding: 6px 10px; border-radius: 6px; border: 0; font: inherit; width: 220px; }
+  main { width: min(1150px, calc(100% - 32px)); margin: 20px auto 60px; }
+  .help { color: var(--muted); margin: 0 0 16px; }
+  .paper { background: #fff; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 12px; box-shadow: 0 1px 3px #0000000f; }
+  .row { display: grid; grid-template-columns: 200px minmax(0, 1fr) auto; gap: 18px; padding: 14px 16px; align-items: center; }
+  .thumb { width: 200px; height: 120px; border: 1px dashed var(--border); border-radius: 6px; display: grid; place-items: center; color: var(--muted); font-size: 0.85rem; background: #fff; overflow: hidden; }
+  .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+  .thumb.has { border-style: solid; }
+  .meta .title { font-weight: 700; margin: 0 0 2px; }
+  .meta .sub { color: var(--muted); font-size: 0.9rem; margin: 0 0 6px; }
+  .chip { display: inline-block; font-size: 0.78rem; padding: 1px 8px; border-radius: 10px; margin-right: 4px; border: 1px solid; }
+  .chip.ok { color: var(--ok); border-color: #a5d6a7; background: #f1f8f1; }
+  .chip.warn { color: var(--warn); border-color: #ffcc80; background: #fff8ec; }
+  .chip.muted { color: var(--muted); border-color: var(--border); }
+  .actions { display: flex; flex-direction: column; gap: 6px; align-items: stretch; min-width: 150px; }
+  .btn { border: 1px solid var(--navy); background: #fff; color: var(--navy); border-radius: 6px; padding: 6px 12px; cursor: pointer; font: inherit; text-align: center; }
+  .btn:hover { background: #edf3f9; }
+  .btn.primary { background: var(--navy); color: #fff; }
+  .btn.primary:hover { background: #1e407c; }
+  .btn.danger { border-color: #c62828; color: #c62828; }
+  .btn:disabled { opacity: 0.45; cursor: default; }
+  .panel { border-top: 1px solid var(--border); padding: 14px 16px 18px; }
+  .tabs { display: flex; gap: 6px; margin-bottom: 12px; align-items: center; flex-wrap: wrap; }
+  .tabs .note { color: var(--muted); font-size: 0.88rem; margin-left: 8px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .fig { border: 2px solid var(--border); border-radius: 8px; background: #fff; padding: 8px; cursor: pointer; display: flex; flex-direction: column; gap: 6px; font: inherit; color: inherit; text-align: left; }
+  .fig:hover { border-color: var(--blue); }
+  .fig img { width: 100%; height: 150px; object-fit: contain; }
+  .fig span { font-size: 0.85rem; color: var(--muted); }
+  .cropper { display: flex; flex-direction: column; gap: 10px; }
+  .pager { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+  .stage { position: relative; display: inline-block; max-width: 100%; border: 1px solid var(--border); cursor: crosshair; user-select: none; touch-action: none; }
+  .stage img { display: block; max-width: 100%; pointer-events: none; }
+  .sel { position: absolute; border: 2px solid #1e88e5; background: #1e88e522; display: none; }
+  .status { color: var(--muted); font-size: 0.9rem; }
+  .status.err { color: #c62828; }
+  .toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: var(--navy); color: #fff; padding: 10px 18px; border-radius: 8px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  input[type=file] { display: none; }
+  @media (max-width: 760px) { .row { grid-template-columns: 1fr; } .thumb { width: 100%; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Publication Figures <span class="count" id="count"></span></h1>
+  <input id="search" type="search" placeholder="Search titles…" aria-label="Search titles">
+  <div class="filters" role="group" aria-label="Filter papers">
+    <button data-filter="all" aria-pressed="true">All</button>
+    <button data-filter="nofig" aria-pressed="false">No figure</button>
+    <button data-filter="nopdf" aria-pressed="false">No PDF</button>
+  </div>
+</header>
+<main>
+  <p class="help">Open a paper to see the figures found in its PDF, then click one to use it on the Publications page. If none looks right, use <b>Crop from page</b> and drag a box. Papers without a PDF need one uploaded (it is saved to <code>_bibliography/pdfs/</code>). Changes are written to the repository right away; commit them when you are done.</p>
+  <div id="list"></div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+const state = { papers: [], filter: 'all', search: '', open: null };
+const list = document.getElementById('list');
+
+const api = async (path, options) => {
+  const res = await fetch(path, options);
+  const data = res.headers.get('Content-Type')?.includes('json') ? await res.json() : null;
+  if (!res.ok) throw new Error(data?.error || res.statusText);
+  return data;
+};
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t.timer); t.timer = setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+function el(tag, attrs = {}, ...children) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') node.className = v;
+    else if (k.startsWith('on')) node.addEventListener(k.slice(2), v);
+    else if (v !== false && v != null) node.setAttribute(k, v === true ? '' : v);
+  }
+  for (const c of children.flat()) if (c != null) node.append(c);
+  return node;
+}
+
+async function load() {
+  state.papers = await api('/api/papers');
+  render();
+}
+
+function visible() {
+  const q = state.search.toLowerCase();
+  return state.papers.filter(p =>
+    (state.filter === 'all' || (state.filter === 'nofig' && !p.image) || (state.filter === 'nopdf' && !p.pdf && !p.arxiv)) &&
+    (!q || p.title.toLowerCase().includes(q) || p.key.toLowerCase().includes(q)));
+}
+
+function render() {
+  const withFig = state.papers.filter(p => p.image).length;
+  document.getElementById('count').textContent = `· ${withFig}/${state.papers.length} with figures`;
+  list.replaceChildren(...visible().map(paperCard));
+}
+
+function paperCard(p) {
+  const upload = el('input', { type: 'file', accept: 'application/pdf', onchange: e => uploadPdf(p, e.target.files[0]) });
+  const source = p.pdf ? el('span', { class: 'chip ok' }, 'PDF')
+    : p.arxiv ? el('span', { class: 'chip ok' }, 'arXiv (downloads on open)')
+    : el('span', { class: 'chip warn' }, 'No PDF');
+  const card = el('section', { class: 'paper', id: `paper-${p.key}` },
+    el('div', { class: 'row' },
+      el('div', { class: 'thumb' + (p.image ? ' has' : '') }, p.image ? el('img', { src: p.image, alt: '' }) : 'No figure'),
+      el('div', { class: 'meta' },
+        el('p', { class: 'title' }, p.title),
+        el('p', { class: 'sub' }, `${p.year} · ${p.venue}`),
+        source, p.hidden ? el('span', { class: 'chip muted' }, 'hidden on site') : null,
+        el('span', { class: 'chip muted' }, p.key)),
+      el('div', { class: 'actions' },
+        el('button', { class: 'btn primary', disabled: !p.pdf && !p.arxiv, onclick: () => toggle(p) },
+          state.open === p.key ? 'Close' : 'Choose figure'),
+        el('button', { class: 'btn', onclick: () => upload.click() }, p.pdf ? 'Replace PDF' : 'Upload PDF'),
+        p.image ? el('button', { class: 'btn danger', onclick: () => removeFigure(p) }, 'Remove figure') : null,
+        upload)));
+  if (state.open === p.key) card.append(panel(p));
+  return card;
+}
+
+function toggle(p) {
+  state.open = state.open === p.key ? null : p.key;
+  state.mode = 'figures';
+  render();
+}
+
+function panel(p) {
+  const body = el('div', {}, el('p', { class: 'status' }, 'Extracting figures…'));
+  const tabs = el('div', { class: 'tabs' },
+    el('button', { class: 'btn' + (state.mode !== 'crop' ? ' primary' : ''), onclick: () => { state.mode = 'figures'; render(); } }, 'Figures'),
+    el('button', { class: 'btn' + (state.mode === 'crop' ? ' primary' : ''), onclick: () => { state.mode = 'crop'; state.page = state.page ?? 0; render(); } }, 'Crop from page'),
+    el('span', { class: 'note' }, state.mode === 'crop' ? 'Drag a box around the area you want, then click “Use selection”.' : 'Click a figure to use it.'));
+  api(`/api/figures/${p.key}`).then(info => {
+    p.pdf = true;
+    body.replaceChildren(state.mode === 'crop' ? cropper(p, info.pages) : figureGrid(p, info));
+  }).catch(err => body.replaceChildren(el('p', { class: 'status err' }, err.message)));
+  return el('div', { class: 'panel' }, tabs, body);
+}
+
+function figureGrid(p, info) {
+  if (!info.figures.length) return el('p', { class: 'status' }, 'No figures were detected automatically. Use “Crop from page”.');
+  return el('div', { class: 'grid' }, info.figures.map(f =>
+    el('button', { class: 'fig', onclick: () => choose(p, { figure: f.id }) },
+      el('img', { src: `${f.src}?t=${Date.now()}`, alt: f.label, loading: 'lazy' }),
+      el('span', {}, `${f.label} · page ${f.page + 1}`))));
+}
+
+function cropper(p, pages) {
+  state.page = Math.min(state.page ?? 0, pages - 1);
+  let crop = null;
+  const img = el('img', { src: `/api/page/${p.key}/${state.page}`, alt: `Page ${state.page + 1}` });
+  const sel = el('div', { class: 'sel' });
+  const stage = el('div', { class: 'stage' }, img, sel);
+  const use = el('button', { class: 'btn primary', disabled: true, onclick: () => choose(p, { page: state.page, crop }) }, 'Use selection');
+  const go = d => { state.page = Math.max(0, Math.min(pages - 1, state.page + d)); render(); };
+  let start = null;
+  const pos = e => { const r = stage.getBoundingClientRect(); return [Math.min(Math.max((e.clientX - r.left) / r.width, 0), 1), Math.min(Math.max((e.clientY - r.top) / r.height, 0), 1)]; };
+  const draw = (a, b) => {
+    const [x0, x1] = [Math.min(a[0], b[0]), Math.max(a[0], b[0])], [y0, y1] = [Math.min(a[1], b[1]), Math.max(a[1], b[1])];
+    Object.assign(sel.style, { display: 'block', left: `${x0 * 100}%`, top: `${y0 * 100}%`, width: `${(x1 - x0) * 100}%`, height: `${(y1 - y0) * 100}%` });
+    return [x0, y0, x1, y1];
+  };
+  stage.addEventListener('pointerdown', e => { start = pos(e); stage.setPointerCapture(e.pointerId); crop = null; use.disabled = true; });
+  stage.addEventListener('pointermove', e => { if (start) draw(start, pos(e)); });
+  stage.addEventListener('pointerup', e => {
+    if (!start) return;
+    const box = draw(start, pos(e)); start = null;
+    if (box[2] - box[0] > 0.02 && box[3] - box[1] > 0.02) { crop = box; use.disabled = false; } else sel.style.display = 'none';
+  });
+  return el('div', { class: 'cropper' },
+    el('div', { class: 'pager' },
+      el('button', { class: 'btn', disabled: state.page === 0, onclick: () => go(-1) }, '‹ Previous'),
+      el('span', { class: 'status' }, `Page ${state.page + 1} of ${pages}`),
+      el('button', { class: 'btn', disabled: state.page >= pages - 1, onclick: () => go(1) }, 'Next ›'),
+      use),
+    stage);
+}
+
+async function choose(p, body) {
+  try {
+    await api('/api/choose', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: p.key, ...body }) });
+    toast('Figure saved');
+    state.open = null;
+    await load();
+    document.getElementById(`paper-${p.key}`)?.scrollIntoView({ block: 'center' });
+  } catch (err) { toast(err.message); }
+}
+
+async function removeFigure(p) {
+  if (!confirm(`Remove the figure from “${p.title}”?`)) return;
+  try {
+    await api('/api/remove', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ key: p.key }) });
+    toast('Figure removed');
+    await load();
+  } catch (err) { toast(err.message); }
+}
+
+async function uploadPdf(p, file) {
+  if (!file) return;
+  try {
+    await api(`/api/pdf/${p.key}`, { method: 'POST', headers: { 'Content-Type': 'application/pdf' }, body: file });
+    toast('PDF saved');
+    state.open = p.key; state.mode = 'figures';
+    await load();
+  } catch (err) { toast(err.message); }
+}
+
+document.querySelectorAll('.filters button').forEach(b => b.addEventListener('click', () => {
+  state.filter = b.dataset.filter;
+  document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  render();
+}));
+document.getElementById('search').addEventListener('input', e => { state.search = e.target.value; render(); });
+load().catch(err => list.replaceChildren(el('p', { class: 'status err' }, err.message)));
+</script>
+</body>
+</html>

@@ -6,3 +6,14 @@ services:
       - "35729:35729"
     volumes:
       - .:/site
+
+  # Figure picker for the Publications page: `docker compose up figures`,
+  # then open http://localhost:4001. Not started by a plain `docker compose up`.
+  figures:
+    build: scripts/figure_picker
+    profiles: ["tools"]
+    ports:
+      - "127.0.0.1:4001:4001"
+    volumes:
+      - .:/site
+      - ./scripts/figure_picker:/app

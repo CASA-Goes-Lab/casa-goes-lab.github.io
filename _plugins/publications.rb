@@ -202,6 +202,7 @@ module CasaPublications
       'arxiv' => arxiv,
       'arxiv_url' => arxiv && "https://arxiv.org/abs/#{arxiv}",
       'pdf' => entry['pdf'],
+      'image' => entry['image'],
       'note' => entry['note'] && latex_to_text(entry['note'])
     }
   end
