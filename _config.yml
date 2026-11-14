@@ -21,6 +21,8 @@ defaults:
 # anyone else to bold under `highlight` as "First Last".
 publications:
   bibliography: _bibliography/publications.bib
+  # scripts/update_publications.rb adds new works by this OpenAlex author.
+  openalex_author: A5069939622
   highlight: []
 
 exclude:
@@ -33,3 +35,4 @@ exclude:
   - Gemfile.lock
   - Dockerfile
   - docker-compose.yml
+  - scripts

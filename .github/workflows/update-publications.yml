@@ -1,0 +1,53 @@
+# Checks OpenAlex for new publications and opens a pull request that adds them
+# to _bibliography/publications.bib. Nothing is published until the PR is merged.
+#
+# Requires Settings → Actions → General → "Allow GitHub Actions to create and
+# approve pull requests" to be enabled.
+name: Update publications from OpenAlex
+
+on:
+  push:
+    branches: ["master"]
+  schedule:
+    - cron: "0 12 * * 1" # Mondays 12:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: update-publications
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '4.0'
+          bundler: latest
+          rubygems: latest
+          bundler-cache: true
+      - name: Add new OpenAlex works to the bibliography
+        id: update
+        run: bundle exec ruby scripts/update_publications.rb | tee update.log
+        env:
+          OPENALEX_API_KEY: ${{ secrets.OPENALEX_API_KEY }}
+      - name: Check the site still builds
+        if: steps.update.outputs.added != '0'
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+      - name: Open pull request
+        if: steps.update.outputs.added != '0'
+        uses: peter-evans/create-pull-request@v7
+        with:
+          branch: auto/update-publications
+          delete-branch: true
+          add-paths: _bibliography/publications.bib
+          commit-message: Add new publications from OpenAlex
+          title: Add new publications from OpenAlex
+          body-path: update.log
