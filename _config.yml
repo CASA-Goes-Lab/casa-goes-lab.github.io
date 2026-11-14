@@ -16,6 +16,13 @@ defaults:
     values:
       layout: page
 
+# Publications page: export BibTeX from Google Scholar into this file.
+# Authors on the Team page (current and alumni) are shown in bold; list
+# anyone else to bold under `highlight` as "First Last".
+publications:
+  bibliography: _bibliography/publications.bib
+  highlight: []
+
 exclude:
   - _archive
   - vendor

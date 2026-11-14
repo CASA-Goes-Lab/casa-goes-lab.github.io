@@ -511,6 +511,123 @@ nav a[aria-current='page'] {
   background: #1e407c;
 }
 
+/* Publications: CSS-only toggle between the by-type and by-year views. */
+.pub-view-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+
+.pub-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pub-toggle-label {
+  color: var(--muted);
+}
+
+.pub-toggle label {
+  padding: 0.4rem 1.1rem;
+  border: 1px solid var(--navy);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--navy);
+  cursor: pointer;
+}
+
+.pub-toggle label:hover {
+  background: #edf3f9;
+}
+
+#pub-by-type:checked ~ .pub-toggle label[for='pub-by-type'],
+#pub-by-year:checked ~ .pub-toggle label[for='pub-by-year'] {
+  background: var(--navy);
+  color: #fff;
+}
+
+#pub-by-type:focus-visible ~ .pub-toggle label[for='pub-by-type'],
+#pub-by-year:focus-visible ~ .pub-toggle label[for='pub-by-year'] {
+  outline: 3px solid #1e88e5;
+  outline-offset: 4px;
+}
+
+#pub-by-type:checked ~ .pub-view--year,
+#pub-by-year:checked ~ .pub-view--type {
+  display: none;
+}
+
+.pub-count {
+  color: var(--muted);
+  font-size: 0.6em;
+  vertical-align: middle;
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pub-list > li {
+  display: grid;
+  grid-template-columns: 6rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding-block: 0.9rem;
+  border-top: 1px solid var(--border);
+}
+
+.pub-list > li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.pub-meta {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.pub-list p {
+  margin: 0 0 0.15rem;
+}
+
+.pub-title {
+  color: var(--text);
+  font-weight: 700;
+}
+
+.pub-title a {
+  color: inherit;
+}
+
+.pub-authors,
+.pub-venue {
+  font-size: 0.95rem;
+}
+
+.pub-authors strong {
+  color: var(--text);
+}
+
+.pub-link {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0 0.45rem;
+  border: 1px solid var(--blue);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--navy);
+}
+
+.pub-link:hover {
+  background: var(--blue);
+  text-decoration: none;
+}
+
 /* Responsive layouts without a menu script or fixed-width wrappers. */
 @media (max-width: 767px) {
   .site-header {
@@ -560,6 +677,10 @@ nav a[aria-current='page'] {
 
   .news-photo > img {
     margin-left: 0;
+  }
+
+  .pub-list > li {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 @media (max-width: 380px) {

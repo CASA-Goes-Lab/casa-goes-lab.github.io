@@ -1,0 +1,9 @@
+{% assign pub = include.pub %}
+<li>
+  <span class="pub-meta">{{ include.meta }}</span>
+  <div>
+    <p class="pub-title">{% if pub.url %}<a href="{{ pub.url | escape }}">{{ pub.title | escape }}</a>{% else %}{{ pub.title | escape }}{% endif %}</p>
+    <p class="pub-authors">{% for author in pub.authors %}{% if author.highlight %}<strong>{{ author.name | escape }}</strong>{% else %}{{ author.name | escape }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p class="pub-venue">{% if pub.venue %}<em>{{ pub.venue | escape }}</em>, {% endif %}{{ pub.year }}{% if pub.note %}. {{ pub.note | escape }}{% endif %}{% if pub.arxiv_url %} <a class="pub-link" href="{{ pub.arxiv_url | escape }}">arXiv</a>{% endif %}{% if pub.pdf %} <a class="pub-link" href="{{ pub.pdf | relative_url }}">PDF</a>{% endif %}</p>
+  </div>
+</li>

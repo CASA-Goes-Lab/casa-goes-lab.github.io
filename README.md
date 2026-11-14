@@ -33,6 +33,22 @@ If you want to build the website and have it rebuild every time you save changes
 bundle exec jekyll serve
 ```
 
+## Updating publications
+
+The Publications page is generated from `_bibliography/publications.bib` by `_plugins/publications.rb`.
+
+1. On Google Scholar, open the profile, tick the select-all box, then choose **Export → BibTeX**.
+2. Replace the contents of `_bibliography/publications.bib` with the export.
+
+Entries are grouped as journal, conference, preprint, or other. `@inproceedings` entries are conferences, and `@article` entries whose venue looks like proceedings (IFAC-PapersOnLine, Lecture Notes, "Conference", "Workshop", ...) are also treated as conferences. An arXiv preprint with the same title as a published paper is hidden, and its arXiv link is added to the published paper. Optional fields you can add to an entry:
+
+- `pubtype = {journal}`: force the group (`journal`, `conference`, `preprint`, or `other`).
+- `arxiv = {2311.07462}`: link an arXiv version whose title differs from the published one; that preprint entry is then hidden.
+- `hidden = {true}`: leave the entry off the page.
+- `doi = {...}` or `url = {...}`: link the title. `pdf = {/files/paper.pdf}`: add a PDF button.
+
+Authors who match someone in `_team` (current or alumni, by first initial and last name) are shown in bold, as are any extra names listed under `publications.highlight` in `_config.yml`. Restart the Docker container after editing `_config.yml` or the plugin.
+
 ## Folder Explanations
 - `_includes`: This is where elements that you want on every page will go. The header and footer are here.
 - `_layouts`: Reusable page layouts that are referenced by files in `pages`
