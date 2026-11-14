@@ -83,21 +83,75 @@ Entries are grouped as journal, conference, preprint, or other. `@inproceedings`
 - `arxiv = {2311.07462}`: link an arXiv version whose title differs from the published one; that preprint entry is then hidden.
 - `hidden = {true}`: leave the entry off the page.
 - `doi = {...}` or `url = {...}`: link the title. `pdf = {/files/paper.pdf}`: add a PDF button.
+- `image = {/images/pubs/<key>.png}`: a small figure from the paper, shown to the right of the entry on wide screens (hidden below 900px). Set it with the figure picker below.
 
 Authors who match someone in `_team` (current or alumni, by first initial and last name) are shown in bold, as are any extra names listed under `publications.highlight` in `_config.yml`. Restart the Docker container after editing `_config.yml` or the plugin.
 
+### Paper PDFs and figures
+
+Each paper on the Publications page can show a small figure from the paper on its right (wide screens only). The figures are chosen by hand with a local **figure picker** that reads the paper's PDF. PDFs are kept in `_bibliography/pdfs/`, named after the paper's entry key (for example `fahim2026enhancing.pdf`), so anyone working on the site can reuse them. That folder is committed but not published on the website.
+
+#### Start the figure picker
+
+1. Start Docker Desktop and open a terminal in the repository folder.
+2. Run:
+   ```sh
+   docker compose up figures
+   ```
+3. Open http://localhost:4001. Each paper shows its current figure and whether a PDF is available. Use the **No figure** and **No PDF** filters to find what is missing, or search by title.
+
+Stop the picker with `Ctrl+C` in that terminal.
+
+#### Add a paper's PDF
+
+Papers with an arXiv id get their PDF automatically the first time you open them in the picker. For any other paper:
+
+1. Find the paper in the picker (it shows a **No PDF** tag).
+2. Click **Upload PDF** and select the file. It is saved as `_bibliography/pdfs/<key>.pdf` and the paper's figures are extracted right away.
+
+You can also copy the file into `_bibliography/pdfs/` yourself; name it exactly like the entry key in `publications.bib` (the grey tag under each title in the picker). Use **Replace PDF** to swap in a better version later.
+
+Prefer the author or accepted-manuscript version (the arXiv copy, or the version you are allowed to share) over the publisher's typeset PDF, since the folder is visible to anyone who can see the repository.
+
+#### Select the figure
+
+1. Click **Choose figure** on the paper. The picker shows every figure it found in the PDF (Fig. 1, Fig. 2, ...).
+2. Click the figure you want. It is saved as `images/pubs/<key>.png` and the entry's `image` field is set in `publications.bib`; the new figure appears on the card.
+3. If none of the automatic crops is right (a figure is cut off, includes caption text, or was not detected), switch to **Crop from page**, go to the right page with **Previous** / **Next**, drag a box around the area you want, and click **Use selection**.
+4. To take a figure off the page, click **Remove figure**.
+
+Tips: pick an overview figure (system diagram, problem setup, or main example) rather than a results plot; it stays readable at thumbnail size. Wide, short figures look small, so a cropped part of a figure often works better.
+
+#### Publish the changes
+
+1. Preview the page with `docker compose up` and open http://localhost:4000/publications/.
+2. Commit and push `_bibliography/publications.bib`, `_bibliography/pdfs/`, and `images/pubs/`.
+
+#### When a new paper is added
+
+1. The paper arrives in `publications.bib` (from the OpenAlex pull request, or added by hand) without a figure.
+2. Run the figure picker, filter by **No figure**, upload the PDF if it has none, and select the figure as above.
+3. Commit the PDF, the figure, and the updated `.bib` together.
+
+Figure previews are cached in `.figure-cache/`, which Git ignores; it is safe to delete.
+
 ## Folder Explanations
-- `_includes`: This is where elements that you want on every page will go. The header and footer are here.
+- `_includes`: This is where elements that you want on every page will go. The header and footer are here, plus `publication.html`, which formats one entry on the Publications page.
 - `_layouts`: Reusable page layouts that are referenced by files in `pages`
-- `_news`, `_team`: Folders of content files that are automatically added to the 'Lab News' section and 'Team' page, respectively.
+- `_news`, `_team`: Folders of content files that are automatically added to the 'Lab News' section and 'Team' page, respectively. A news post can show one photo (`image:`) or several (`images:` list); only posts from the last `news_months` months (set in `_config.yml`) appear on the home page.
+- `_bibliography`: `publications.bib`, the list of papers shown on the Publications page, and `pdfs/`, the paper PDFs used to pick figures (not published). See "Updating publications" above.
+- `_plugins`: `publications.rb`, which reads the `.bib` file, groups and sorts the papers, and bolds team members' names for the Publications page.
+- `scripts`: `update_publications.rb`, which adds new papers from OpenAlex to the `.bib` file, and `figure_picker/`, the local figure picker (`docker compose up figures`). Excluded from the built site.
 - `pages`: Where main page files go, such as `team.md`.
 - `images`: Where all images for site go.
 - `styles`: The CSS and any fonts or other styling files
-- `_config.yml`, `Gemfile`, `Gemfile.lock`, `.gitignore`, `.github/workflows`: Configuration files
+- `_config.yml`, `Gemfile`, `Gemfile.lock`, `.gitignore`: Configuration files
+- `.github/workflows`: GitHub Actions. `jekyll.yml` deploys the site when `master` changes, `rebuild-check.yml` checks that the site builds, and `update-publications.yml` checks OpenAlex for new papers and opens a pull request.
+- `Dockerfile`, `docker-compose.yml`, `.dockerignore`: The Docker setup for previewing the site locally (see "Run locally with Docker").
 
 ### Other
 - `_archive`: The previous design of the site. Everything here is excluded from builds. This folder should be deleted at some point.
-- `_site`, `.bundle`, `vendor`, `.jekyll-cacge`: Temporary site files generated by your local machine so you can privew the site. These are ignored by Git. You should not see these on the GitHub repository.
+- `_site`, `.bundle`, `vendor`, `.jekyll-cache`: Temporary site files generated by your local machine so you can preview the site. These are ignored by Git. You should not see these on the GitHub repository.
 
 ## Notes
 Team members use `startdate` for current-student ordering and `date_left` for alumni ordering (most recent departure first). Write `date_left` as a quoted ISO date, such as `"2026-05"` or `"2026-05-15"`. Current members retain their previous date values as temporary placeholders; when moving someone to `category: alumni`, update `date_left` to their actual departure date and `enddate` to the displayed end month/year.
