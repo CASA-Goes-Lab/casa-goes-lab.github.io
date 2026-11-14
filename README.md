@@ -37,8 +37,45 @@ bundle exec jekyll serve
 
 The Publications page is generated from `_bibliography/publications.bib` by `_plugins/publications.rb`.
 
-1. On Google Scholar, open the profile, tick the select-all box, then choose **Export → BibTeX**.
-2. Replace the contents of `_bibliography/publications.bib` with the export.
+New papers are added from [OpenAlex](https://openalex.org/A5069939622) by `scripts/update_publications.rb`. The script asks OpenAlex for every work by the author ID in `_config.yml` (`publications.openalex_author`) and appends the ones that are not already in the `.bib` file (matched by DOI, title, or arXiv id). Existing entries are never changed, so your manual edits are kept.
+
+There are two ways to run it. Either way, review the new entries before publishing: OpenAlex sometimes swaps first and last names, uses a repository name as the venue, or picks the wrong type.
+
+### Option 1: GitHub Actions (automatic)
+
+The workflow `.github/workflows/update-publications.yml` runs the script on every push to `master`, every Monday at 12:00 UTC, and whenever you start it by hand. If it finds new papers, it opens a pull request named "Add new publications from OpenAlex". Nothing changes on the live site until you merge it.
+
+One-time setup:
+
+1. On GitHub, go to **Settings → Actions → General**.
+2. Under "Workflow permissions", tick **Allow GitHub Actions to create and approve pull requests**, then **Save**. If the box is greyed out, enable the same option in the organization's settings (CASA-Goes-Lab → Settings → Actions → General) first.
+3. Make sure the workflow file is on `master` (scheduled runs and the Run workflow button only work from the default branch).
+
+Each time a pull request appears:
+
+1. Open the pull request. Its description lists the papers that were added.
+2. Check the **Files changed** tab and fix anything wrong directly in `_bibliography/publications.bib` (edit the file on the PR branch, or pull the branch and edit locally).
+3. Merge the pull request. The deploy workflow then publishes the updated page.
+
+To check for new papers right away: **Actions → Update publications from OpenAlex → Run workflow**.
+
+### Option 2: Docker (manual, on your computer)
+
+1. Start Docker Desktop and open a terminal in the repository folder.
+2. Run the script:
+   ```sh
+   docker compose run --rm site bundle exec ruby scripts/update_publications.rb
+   ```
+   It prints the papers it added, or "No new publications found on OpenAlex."
+3. Review the new entries at the end of `_bibliography/publications.bib` (they follow a `% Added from OpenAlex on <date>` line).
+4. Preview the page with `docker compose up` and open http://localhost:4000/publications/.
+5. Commit and push `_bibliography/publications.bib`.
+
+### Notes
+
+- **Removing a paper:** add `hidden = {true}` to its entry instead of deleting it; a deleted entry is added back on the next run.
+- **Papers OpenAlex misses:** add them by hand, for example by copying the entry from Google Scholar (select the paper, then **Export → BibTeX**).
+- **OpenAlex API key (optional):** the script works without one. To use a key, add it as the repository secret `OPENALEX_API_KEY` (Settings → Secrets and variables → Actions), or pass `-e OPENALEX_API_KEY=...` to `docker compose run`.
 
 Entries are grouped as journal, conference, preprint, or other. `@inproceedings` entries are conferences, and `@article` entries whose venue looks like proceedings (IFAC-PapersOnLine, Lecture Notes, "Conference", "Workshop", ...) are also treated as conferences. An arXiv preprint with the same title as a published paper is hidden, and its arXiv link is added to the published paper. Optional fields you can add to an entry:
 
