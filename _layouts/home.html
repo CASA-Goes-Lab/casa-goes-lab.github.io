@@ -19,14 +19,21 @@ layout: default
 <section class="panel container" aria-labelledby="news-title">
   <h2 class="section-title" id="news-title">Lab News</h2>
   {% assign news_items = site.news | sort: 'date' | reverse %}
+  {% assign news_cutoff = site.news_months | default: 9 | times: 2629746 %}
+  {% assign news_cutoff = site.time | date: '%s' | minus: news_cutoff %}
   <ul class="news-list">
     {% for news in news_items %}
+    {% assign news_time = news.date | date: '%s' | plus: 0 %}
+    {% if news_time < news_cutoff %}{% break %}{% endif %}
     <li>
       {% capture entry %}<time datetime="{{ news.date | date: '%Y-%m-%d' }}">{{ news.date | date: '%b %Y' }}</time><span class="news-text">{{ news.content | remove: '<p>' | remove: '</p>' }}</span>{% endcapture %}
-      {% if news.image %}
+      {% assign photos = news.images | default: news.image %}
+      {% if photos %}
       <details class="news-photo">
         <summary class="news-entry">{{ entry }}</summary>
-        <img src="{{ news.image | relative_url }}" alt="{{ news.title | escape }}" loading="lazy">
+        {% if news.images.size > 1 %}<div class="news-gallery">{% endif %}
+        {% for photo in photos %}<img src="{{ photo | relative_url }}" alt="{{ news.title | escape }}" loading="lazy">{% endfor %}
+        {% if news.images.size > 1 %}</div>{% endif %}
       </details>
       {% else %}
       <div class="news-entry">{{ entry }}</div>
