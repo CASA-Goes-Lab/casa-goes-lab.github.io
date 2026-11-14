@@ -1,6 +1,5 @@
 ---
 title: Publications
-layout: page
+layout: publications
 permalink: /publications/
 ---
-UNDER CONSTRUCTION

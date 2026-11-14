@@ -1,0 +1,43 @@
+---
+layout: default
+---
+<h1>{{ page.title | escape }}</h1>
+{{ content }}
+{% assign pubs = site.data.publications %}
+{% assign type_groups = "journal:Journal Articles|conference:Conference Papers|preprint:Preprints|other:Theses and Other" | split: '|' %}
+<div class="pub-views">
+  <input class="pub-view-input" type="radio" name="pub-view" id="pub-by-type" checked>
+  <input class="pub-view-input" type="radio" name="pub-view" id="pub-by-year">
+  <div class="pub-toggle">
+    <span class="pub-toggle-label">Sort by</span>
+    <label for="pub-by-type">Type</label>
+    <label for="pub-by-year">Year</label>
+  </div>
+
+  <div class="pub-view pub-view--type">
+    {% for group in type_groups %}
+    {% assign parts = group | split: ':' %}
+    {% assign items = pubs | where: 'type', parts[0] %}
+    {% if items.size > 0 %}
+    <section class="panel" aria-labelledby="pubs-{{ parts[0] }}">
+      <h2 class="section-title" id="pubs-{{ parts[0] }}">{{ parts[1] }} <span class="pub-count">({{ items.size }})</span></h2>
+      <ol class="pub-list">
+        {% for pub in items %}{% include publication.html pub=pub meta=pub.year %}{% endfor %}
+      </ol>
+    </section>
+    {% endif %}
+    {% endfor %}
+  </div>
+
+  <div class="pub-view pub-view--year">
+    {% assign years = pubs | group_by: 'year' %}
+    {% for year in years %}
+    <section class="panel" aria-labelledby="pubs-{{ year.name }}">
+      <h2 class="section-title" id="pubs-{{ year.name }}">{{ year.name }} <span class="pub-count">({{ year.items.size }})</span></h2>
+      <ol class="pub-list">
+        {% for pub in year.items %}{% include publication.html pub=pub meta=pub.label %}{% endfor %}
+      </ol>
+    </section>
+    {% endfor %}
+  </div>
+</div>

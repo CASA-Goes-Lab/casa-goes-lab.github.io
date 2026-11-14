@@ -9,6 +9,7 @@ email:
 linkedinurl: "https://www.linkedin.com/in/aafiyashaikh/"
 startdate: "2025-10"
 enddate: 05/2026
+next_position: "Production Engineer - Electrical, AOI"
 sentence-projectdescription: ""
 paragraph-projectdescription: ""
 weight: 2
