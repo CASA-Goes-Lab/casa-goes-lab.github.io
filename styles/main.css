@@ -310,6 +310,18 @@ nav a[aria-current='page'] {
   border-radius: 8px;
 }
 
+.news-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0 1rem 7rem;
+}
+
+.news-gallery img {
+  width: min(100%, 340px);
+  border-radius: 8px;
+}
+
 .projects {
   background: var(--navy);
   padding: 2rem 20px;
@@ -675,7 +687,8 @@ nav a[aria-current='page'] {
     column-gap: 0.35rem;
   }
 
-  .news-photo > img {
+  .news-photo > img,
+  .news-gallery {
     margin-left: 0;
   }
 

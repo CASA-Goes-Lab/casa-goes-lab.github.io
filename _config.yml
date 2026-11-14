@@ -25,6 +25,9 @@ publications:
   openalex_author: A5069939622
   highlight: []
 
+# Lab News on the home page only shows posts from the last `news_months` months.
+news_months: 9
+
 exclude:
   - _archive
   - vendor
